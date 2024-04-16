@@ -10,7 +10,7 @@
         <div class="container d-flec justify-content-center">
             <div class="col-8" >
                 <div class="card card-header">
-                   <h3 class="text-center">Agregar Cliente</h3>
+                   <h3 class="text-center">AGREGAR Cliente</h3>
                 </div>
                 <div class="form-control card card-body">
                     <fieldset>
