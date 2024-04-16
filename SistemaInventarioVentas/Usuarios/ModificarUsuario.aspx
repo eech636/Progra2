@@ -1,21 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificarUsuario.aspx.cs" Inherits="SistemaInventarioVentas.Usuario.ModificarUsuario" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModificarUsuario.aspx.cs" Inherits="SistemaInventarioVentas.Usuario.ModificarUsuario" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="container d-flex justify-content-center">
-            <div class="col-8">
-                <div class="card card-header">
                     <h5 class="text-center">Modificar Usuario</h5>
-                       </div>
                     <div class=" card card-body bg-warning-subtle">
                         <fieldset>
                             <div>
@@ -66,10 +52,4 @@
                             </div>
                         </fieldset>
                   </div>
-                 </div>
-                </div>
-               <div>
-              </div>
-        </form>
-    </body>
-</html>
+</asp:Content>          
