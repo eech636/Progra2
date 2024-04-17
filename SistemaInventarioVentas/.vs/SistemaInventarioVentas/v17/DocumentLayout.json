@@ -1,42 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\",
+  "WorkspaceRootPath": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|c:\\users\\usuario\\desktop\\progra2-main\\progra2-main\\sistemainventarioventas - copy\\usuarios\\usuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|c:\\users\\alejo\\onedrive\\documentos\\github\\progra2\\sistemainventarioventas\\usuarios\\modificarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:usuarios\\modificarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|c:\\users\\alejo\\onedrive\\documentos\\github\\progra2\\sistemainventarioventas\\usuarios\\eliminarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:usuarios\\eliminarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|c:\\users\\alejo\\onedrive\\documentos\\github\\progra2\\sistemainventarioventas\\usuarios\\agregarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:usuarios\\agregarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|c:\\users\\alejo\\onedrive\\documentos\\github\\progra2\\sistemainventarioventas\\usuarios\\usuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:usuarios\\usuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\cliente\\cliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\cliente\\cliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:cliente\\cliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\webform3.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:webform3.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\webform1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:webform1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\webform2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{48A33888-36CD-4718-9104-E910C557C92E}|SistemaInventarioVentas.csproj|solutionrelative:webform2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,116 +30,80 @@
       "DocumentGroups": [
         {
           "DockedHeight": 240,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Cliente.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Cliente\\Cliente.aspx",
-              "RelativeDocumentMoniker": "Cliente\\Cliente.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Cliente\\Cliente.aspx",
-              "RelativeToolTip": "Cliente\\Cliente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T02:40:16.215Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Usuarios.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Usuarios\\Usuarios.aspx",
-              "RelativeDocumentMoniker": "Usuarios\\Usuarios.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Usuarios\\Usuarios.aspx",
-              "RelativeToolTip": "Usuarios\\Usuarios.aspx",
+              "Title": "ModificarUsuario.aspx",
+              "DocumentMoniker": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\ModificarUsuario.aspx",
+              "RelativeDocumentMoniker": "Usuarios\\ModificarUsuario.aspx",
+              "ToolTip": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\ModificarUsuario.aspx",
+              "RelativeToolTip": "Usuarios\\ModificarUsuario.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T02:39:50.95Z",
+              "WhenOpened": "2024-04-16T03:43:06.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EliminarUsuario.aspx",
+              "DocumentMoniker": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\EliminarUsuario.aspx",
+              "RelativeDocumentMoniker": "Usuarios\\EliminarUsuario.aspx",
+              "ToolTip": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\EliminarUsuario.aspx",
+              "RelativeToolTip": "Usuarios\\EliminarUsuario.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-16T03:39:24.452Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Site.Master",
-              "RelativeDocumentMoniker": "Site.Master",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Site.Master",
-              "RelativeToolTip": "Site.Master",
+              "Title": "AgregarUsuario.aspx",
+              "DocumentMoniker": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\AgregarUsuario.aspx",
+              "RelativeDocumentMoniker": "Usuarios\\AgregarUsuario.aspx",
+              "ToolTip": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\AgregarUsuario.aspx",
+              "RelativeToolTip": "Usuarios\\AgregarUsuario.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T01:11:04.542Z",
+              "WhenOpened": "2024-04-16T03:26:35.47Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "WebForm1.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\WebForm1.aspx",
-              "RelativeDocumentMoniker": "WebForm1.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\WebForm1.aspx",
-              "RelativeToolTip": "WebForm1.aspx",
+              "DocumentIndex": 4,
+              "Title": "Cliente.aspx",
+              "DocumentMoniker": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Cliente\\Cliente.aspx",
+              "RelativeDocumentMoniker": "Cliente\\Cliente.aspx",
+              "ToolTip": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Cliente\\Cliente.aspx",
+              "RelativeToolTip": "Cliente\\Cliente.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T01:11:04.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "WebForm2.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\WebForm2.aspx",
-              "RelativeDocumentMoniker": "WebForm2.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\WebForm2.aspx",
-              "RelativeToolTip": "WebForm2.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T01:11:04.547Z"
+              "WhenOpened": "2024-03-15T02:40:16.215Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Site.Master.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Site.Master.cs",
-              "RelativeDocumentMoniker": "Site.Master.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Site.Master.cs",
-              "RelativeToolTip": "Site.Master.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T01:11:04.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Contact.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Contact.aspx",
-              "RelativeDocumentMoniker": "Contact.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\Contact.aspx",
-              "RelativeToolTip": "Contact.aspx",
+              "Title": "Usuarios.aspx",
+              "DocumentMoniker": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\Usuarios.aspx",
+              "RelativeDocumentMoniker": "Usuarios\\Usuarios.aspx",
+              "ToolTip": "C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\Progra2\\SistemaInventarioVentas\\Usuarios\\Usuarios.aspx",
+              "RelativeToolTip": "Usuarios\\Usuarios.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T01:11:04.549Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "About.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\About.aspx",
-              "RelativeDocumentMoniker": "About.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\About.aspx",
-              "RelativeToolTip": "About.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T01:11:04.551Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WebForm3.aspx",
-              "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\WebForm3.aspx",
-              "RelativeDocumentMoniker": "WebForm3.aspx",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\Progra2-main\\Progra2-main\\SistemaInventarioVentas - Copy\\WebForm3.aspx",
-              "RelativeToolTip": "WebForm3.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-15T01:11:04.552Z"
+              "WhenOpened": "2024-03-15T02:39:50.95Z",
+              "EditorCaption": ""
             }
           ]
         }
