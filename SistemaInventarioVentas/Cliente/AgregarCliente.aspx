@@ -16,21 +16,21 @@
                     <fieldset>
                         <div class="input-group">
                             <asp:Label ID="Label1" runat="server" Text="Nombre Cliente" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                            <asp:TextBox ID="TxtNombreC" runat="server" ForeColor="#CCFFFF" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtNombreC" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
                         <!--validaciones -->
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtNombreC" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                         
                         </div>
                         <div class="input-group">
                             <asp:Label ID="Label2" runat="server" Text="Telefono" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                            <asp:TextBox ID="TxtTelefono" runat="server" ForeColor="#CCFFFF" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtTelefono" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
                         <!--validaciones -->
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtTelefono" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                         
                         </div>
                         <div class="input-group">
                             <asp:Label ID="Label3" runat="server" Text="Email" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                            <asp:TextBox ID="TxtEmail" runat="server" ForeColor="#CCFFFF" CssClass="form-control" ></asp:TextBox>
+                            <asp:TextBox ID="TxtEmail" runat="server" ForeColor="#000000" CssClass="form-control" ></asp:TextBox>
                         <!-- validaciones -->
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtEmail" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato de correo no valido" ControlToValidate="TxtEmail" ValidationExpression="^[\w-\.]+@([\wx-]+\.)+[\w-]{2,4}$" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="input-group">
                             <asp:Label ID="Label4" runat="server" Text="Direccion" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                            <asp:TextBox ID="TxtDireccion" runat="server" ForeColor="#CCFFFF" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtDireccion" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
                         <!--validaciones -->
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtDireccion" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                         

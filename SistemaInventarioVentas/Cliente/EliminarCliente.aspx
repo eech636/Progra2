@@ -16,7 +16,7 @@
                 <fieldset>
                     <div class="input-group">
                         <asp:Label ID="Label1" runat="server" Text="Nombre del Cliente:" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                        <asp:TextBox ID="TxtNomCliente" runat="server" ForeColor="#CCFFFF" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TxtNomCliente" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
                     </div>
 
                     <br />

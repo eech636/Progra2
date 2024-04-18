@@ -55,3 +55,4 @@ CREATE TABLE Ventas (
     FOREIGN KEY (IdUsuario) REFERENCES Usuarios(IdUsuario)
 );
 GO
+select*from Productos
