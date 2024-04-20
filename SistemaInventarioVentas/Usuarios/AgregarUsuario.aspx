@@ -12,11 +12,11 @@
                             </div>
                             <div>
                                 <asp:Label ID="LblClave" runat="server" Text="clave" cssClass="form-label text-danger fw-bold"></asp:Label>
-                                <asp:TextBox ID="TxtBoxClave" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="TxtBoxClave" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvClave" runat="server" ControlToValidate="TxtBoxClave" ErrorMessage="Ingrese bien los datos"></asp:RequiredFieldValidator>
-                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtBoxClave" ErrorMessage="La contraseña debe contener al menos 8 caracteres, incluyendo al menos una letra mayuscula, una letra minuscula y un numero" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" ></asp:RegularExpressionValidator>
-
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtBoxClave" ErrorMessage="La contraseña debe contener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"></asp:RegularExpressionValidator>
                             </div>
+
                             <div>
                                 <asp:Label ID="LblNivelUsuario" runat="server" Text="NivelUsuario" CssClass="form-label text-danger fw-bold"></asp:Label>
                                 <asp:TextBox ID="TxtBoxNivelUsuario" runat="server" CssClass="form-control"></asp:TextBox>
