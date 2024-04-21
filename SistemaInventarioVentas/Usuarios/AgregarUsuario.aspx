@@ -1,20 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarUsuario.aspx.cs" Inherits="SistemaInventarioVentas.Usuario.AgregarUsuario" %>
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarUsuario.aspx.cs" Inherits="SistemaInventarioVentas.Usuario.AgregarUsuario" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="container d-flex justify-content-center">
-            <div class="col-8">
-                <div class="card card-header">
                     <h5 class="text-center">Ingresar Usuarios</h5>
-                       </div>
                     <div class=" card card-body bg-info-subtle">
                         <fieldset>
                             <div>
@@ -24,11 +12,11 @@
                             </div>
                             <div>
                                 <asp:Label ID="LblClave" runat="server" Text="clave" cssClass="form-label text-danger fw-bold"></asp:Label>
-                                <asp:TextBox ID="TxtBoxClave" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="TxtBoxClave" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvClave" runat="server" ControlToValidate="TxtBoxClave" ErrorMessage="Ingrese bien los datos"></asp:RequiredFieldValidator>
-                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtBoxClave" ErrorMessage="La contraseña debe contener al menos 8 caracteres, incluyendo al menos una letra mayuscula, una letra minuscula y un numero" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" ></asp:RegularExpressionValidator>
-
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtBoxClave" ErrorMessage="La contraseña debe contener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"></asp:RegularExpressionValidator>
                             </div>
+
                             <div>
                                 <asp:Label ID="LblNivelUsuario" runat="server" Text="NivelUsuario" CssClass="form-label text-danger fw-bold"></asp:Label>
                                 <asp:TextBox ID="TxtBoxNivelUsuario" runat="server" CssClass="form-control"></asp:TextBox>
@@ -60,11 +48,4 @@
                             </div>
                         </fieldset>
                   </div>
-                 </div>
-                </div>
-               <div>
-              </div>
-        </form>
-    </body>
-</html>
-</html>
+</asp:Content>                
