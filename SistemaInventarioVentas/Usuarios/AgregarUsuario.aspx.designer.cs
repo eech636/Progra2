@@ -78,33 +78,6 @@ namespace SistemaInventarioVentas.Usuario
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
-        /// Control LblNivelUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNivelUsuario;
-
-        /// <summary>
-        /// Control TxtBoxNivelUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxNivelUsuario;
-
-        /// <summary>
-        /// Control rfvUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUsuario;
-
-        /// <summary>
         /// Control LblEmail.
         /// </summary>
         /// <remarks>
@@ -141,85 +114,40 @@ namespace SistemaInventarioVentas.Usuario
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator;
 
         /// <summary>
-        /// Control LblNivel1.
+        /// Control LblRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNivel1;
+        protected global::System.Web.UI.WebControls.Label LblRol;
 
         /// <summary>
-        /// Control TxtBoxNivel1.
+        /// Control TxtBoxRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxNivel1;
+        protected global::System.Web.UI.WebControls.TextBox TxtBoxRol;
 
         /// <summary>
-        /// Control rfvNivel1.
+        /// Control rfvRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNivel1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRol;
 
         /// <summary>
-        /// Control LblNivel2.
+        /// Control LblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNivel2;
-
-        /// <summary>
-        /// Control TxtBoxNivel2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxNivel2;
-
-        /// <summary>
-        /// Control rfvNivel2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNivel2;
-
-        /// <summary>
-        /// Control LblNivel3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNivel3;
-
-        /// <summary>
-        /// Control TxtBoxNivel3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxNivel3;
-
-        /// <summary>
-        /// Control rfvNivel3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNivel3;
+        protected global::System.Web.UI.WebControls.Label LblError;
 
         /// <summary>
         /// Control BtnIngresar.

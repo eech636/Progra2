@@ -9,8 +9,11 @@
                                 <asp:TextBox ID="TxtBoxIdUsuario" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvIdUsuario" runat="server" ControlToValidate="TxtBoxIdUsuario" ErrorMessage="Ingrese bien los datos"></asp:RequiredFieldValidator>
                             </div>
-                            <div>
-                                <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger"/>
+                            <div class="my-3">
+                                 <asp:Label ID="LblError" runat="server" Text=" "></asp:Label>
+                            </div>
+                            <div class="pt-2">
+                                <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" OnClick="BtnEliminar_Click"/>
                             </div>
                             </fieldset>
                  </div>

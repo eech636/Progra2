@@ -24,7 +24,7 @@ namespace SistemaInventarioVentas
         {
             
             SqlConnection Conexion = new SqlConnection();
-            Conexion.ConnectionString = @"Data Source=localhost; Initial Catalog=SistemaInventarioyFacturacion; Integrated Security=true";
+            Conexion.ConnectionString = @"Data Source=ALEJANDRO; Initial Catalog=SistemaInventarioyFacturacion; Integrated Security=true";
             return Conexion; 
         }
     }
