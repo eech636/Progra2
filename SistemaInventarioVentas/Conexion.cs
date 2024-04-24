@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -24,7 +25,7 @@ namespace SistemaInventarioVentas
         {
             
             SqlConnection Conexion = new SqlConnection();
-            Conexion.ConnectionString = @"Data Source=ALEJANDRO; Initial Catalog=SistemaInventarioyFacturacion; Integrated Security=true";
+            Conexion.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             return Conexion; 
         }
     }

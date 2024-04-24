@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <td>Nombre del Artículo:</td>
-                <td><asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>   
                     <asp:RequiredFieldValidator ID="ValidadorNombreArticulo" runat="server" ControlToValidate="txtNombre" ErrorMessage="Este campo es obligatorio"></asp:RequiredFieldValidator>
                 </td>
             </tr>
