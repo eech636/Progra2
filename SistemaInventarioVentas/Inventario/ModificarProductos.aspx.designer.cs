@@ -42,22 +42,22 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorBuscarProducto;
 
         /// <summary>
-        /// Control LbMensaje.
+        /// Control LabelMensajeBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbMensaje;
+        protected global::System.Web.UI.WebControls.Label LabelMensajeBuscar;
 
         /// <summary>
-        /// Control BtnModifcarBuscar.
+        /// Control BtnModificarBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnModifcarBuscar;
+        protected global::System.Web.UI.WebControls.Button BtnModificarBuscar;
 
         /// <summary>
         /// Control LbModificarPrecio.

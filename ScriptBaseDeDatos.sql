@@ -56,3 +56,7 @@ CREATE TABLE Ventas (
 );
 GO
 select*from Productos
+alter table Productos
+add PrecioCosto decimal(10,2),
+Descripcion nvarchar(100);
+go

@@ -15,7 +15,7 @@
             <table class="table table-bordered">
                 <tr>
                     <td class="auto-style2">
-                        <asp:Label ID="LbNombreProducto" runat="server" Text="Nombre del producto"></asp:Label>
+                        <asp:Label ID="LbNombreProducto" runat="server" Text="Id del producto"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TxtIdProducto" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
@@ -23,16 +23,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="LbMensaje" runat="server"></asp:Label>
+                    <td  colspan="2" class="text-center" ="auto-style2">
+                        <asp:Label ID="LabelMensajeBuscar" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Button ID="BtnModifcarBuscar" runat="server"  Text="Buscar Producto" ValidationGroup="GrupoValidadorBuscarProducto" CssClass="btn btn-outline-info d-block mx-auto" />
+                    <td colspan="2" class="auto-style2">
+                        <asp:Button ID="BtnModificarBuscar" runat="server"  Text="Buscar Producto" ValidationGroup="GrupoValidadorBuscarProducto" OnClick="BtnModificarBuscar_Click" CssClass="btn btn-outline-info d-block mx-auto" />
                     </td>
-                    <td>&nbsp;</td>
+                   
                 </tr>
                 <tr>
                     <td class="auto-style3">
@@ -62,21 +62,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="LbMensajeProductoModificado" runat="server"></asp:Label>
+                    <td colspan="2"  class="text-center">
+                        <asp:Label ID="LbMensajeProductoModificado"  runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Button ID="BtnGuardarModificar" runat="server" OnClick="BtnGuardarMoficar_Click" Text="Modificar Producto" CssClass="btn btn-outline-info d-block mx-auto" />
+                    <td colspan="2" class="auto-style2">
+                        <asp:Button ID="BtnGuardarModificar" runat="server" Text="Modificar Producto" OnClick="BtnGuardarModificar_Click" CssClass="btn btn-outline-info d-block mx-auto" />
                     </td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
+              
             </table>
         </div>
     </div>

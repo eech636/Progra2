@@ -59,8 +59,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td colspan="2" class="text-center">
+                        <asp:Label ID="LabelMensajeAgregar" runat="server" ></asp:Label>
+                    </td>
+                </tr>
+                <tr>
                     <td class="auto-style3" colspan="2">
-                        <asp:Button ID="BtnGuardarArticulo" runat="server" Text="Guardar" CssClass="btn btn-outline-info d-block mx-auto" />
+                        <asp:Button ID="BtnGuardarArticulo" runat="server" Text="Guardar" CssClass="btn btn-outline-info d-block mx-auto" OnClick="BtnGuardarArticulo_Click" />
                     </td>
                 </tr>
                

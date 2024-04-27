@@ -150,6 +150,15 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorDescripcion;
 
         /// <summary>
+        /// Control LabelMensajeAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMensajeAgregar;
+
+        /// <summary>
         /// Control BtnGuardarArticulo.
         /// </summary>
         /// <remarks>
