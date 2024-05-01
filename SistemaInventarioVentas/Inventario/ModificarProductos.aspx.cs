@@ -36,7 +36,7 @@ namespace SistemaInventarioVentas.Inventario
                     conexionBuscar.Open();
 
                     // Query para la consulta SQL para buscar el producto
-                    string queryBuscar = "SELECT NombreProducto, Precio, CantidadDisponible, Descripcion FROM Productos WHERE IdProducto = " + idProducto;
+                    string queryBuscar = "SELECT NombreProducto, Precio,PrecioCosto, CantidadDisponible, Descripcion FROM Productos WHERE IdProducto = " + idProducto;
 
                     // Crea el comando SQL
                     SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
@@ -46,8 +46,10 @@ namespace SistemaInventarioVentas.Inventario
                     if (reader.Read())
                     {
                         // Muestra los datos del producto en los campos correspondientes
+                        TxtModificarNombre.Text = reader["NombreProducto"].ToString();
                         TxtModificarPrecio.Text = reader["Precio"].ToString();
-                        TxtModifcarCantidad.Text = reader["CantidadDisponible"].ToString();
+                        TxtPrecioCosto.Text = reader["PrecioCosto"].ToString();
+                        TxtModificarCantidad.Text = reader["CantidadDisponible"].ToString();
                         TxtModificarDescripcion.Text = reader["Descripcion"].ToString();
                         LabelMensajeBuscar.Text = "";
                     }
@@ -71,8 +73,10 @@ namespace SistemaInventarioVentas.Inventario
         {
             // Obtiene los valores del producto a modificar
             int idProducto = Convert.ToInt32(TxtIdProducto.Text);
+            string nuevoNombreProducto = TxtModificarNombre.Text;
             decimal nuevoPrecio = Convert.ToDecimal(TxtModificarPrecio.Text);
-            int nuevaCantidad = Convert.ToInt32(TxtModifcarCantidad.Text);
+            decimal nuevoPrecioCosto = Convert.ToDecimal(TxtPrecioCosto.Text);
+            int nuevaCantidad = Convert.ToInt32(TxtModificarCantidad.Text);
             string nuevaDescripcion = TxtModificarDescripcion.Text;
 
             // Crea la conexión a la base de datos
@@ -84,7 +88,7 @@ namespace SistemaInventarioVentas.Inventario
                     conexionModificar.Open();
 
                     // Crea la consulta SQL para modificar el producto
-                    string queryConsulta = "UPDATE Productos SET Precio = " + nuevoPrecio + ", CantidadDisponible = " + nuevaCantidad + ", Descripcion = '" + nuevaDescripcion + "' WHERE IdProducto = " + idProducto;
+                    string queryConsulta = "UPDATE Productos SET NombreProducto = '" + nuevoNombreProducto + "', Precio = " + nuevoPrecio + ", PrecioCosto = " + nuevoPrecioCosto + ", CantidadDisponible = " + nuevaCantidad + ", Descripcion = '" + nuevaDescripcion + "' WHERE IdProducto = " + idProducto;
 
                     // Crea el comando SQL
                     SqlCommand cmd = new SqlCommand(queryConsulta, conexionModificar);
