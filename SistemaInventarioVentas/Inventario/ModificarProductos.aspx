@@ -15,7 +15,7 @@
             <table class="table table-bordered">
                 <tr>
                     <td class="auto-style2">
-                        <asp:Label ID="LbNombreProducto" runat="server" Text="Nombre del producto"></asp:Label>
+                        <asp:Label ID="LbNombreProducto" runat="server" Text="Id del producto"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TxtIdProducto" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
@@ -23,17 +23,28 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="LbMensaje" runat="server"></asp:Label>
+                    <td  colspan="2" class="text-center" ="auto-style2">
+                        <asp:Label ID="LabelMensajeBuscar" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Button ID="BtnModifcarBuscar" runat="server"  Text="Buscar Producto" ValidationGroup="GrupoValidadorBuscarProducto" CssClass="btn btn-outline-info d-block mx-auto" />
+                    <td colspan="2" class="auto-style2">
+                        <asp:Button ID="BtnModificarBuscar" runat="server"  Text="Buscar Producto" ValidationGroup="GrupoValidadorBuscarProducto" OnClick="BtnModificarBuscar_Click" CssClass="btn btn-outline-info d-block mx-auto" />
                     </td>
-                    <td>&nbsp;</td>
+                   
                 </tr>
+                <tr>
+                    <td cospa="2" class="auto-style2" >
+                         <asp:Label ID="LnModificarNombre" runat="server" Text="Nombre del producto"></asp:Label>
+                    </td>
+                    <td class="auto-style4">
+                            <asp:TextBox ID="TxtModificarNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtModificarNombre" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
+                        </td>
+                </tr>
+                       
+
                 <tr>
                     <td class="auto-style3">
                         <asp:Label ID="LbModificarPrecio" runat="server" Text="Precio"></asp:Label>
@@ -43,13 +54,24 @@
                         <asp:RequiredFieldValidator ID="ValidadorModificarPrecio" runat="server" ControlToValidate="TxtModificarPrecio" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
+
+                <tr>
+                    <td cospa="2" class="auto-style2">
+                        <asp:Label ID="LbModificarPrecioCosto" runat="server" Text="PrecioCosto"></asp:Label>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:TextBox ID="TxtPrecioCosto" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtPrecioCosto" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="LbModificarCantidadDisponible" runat="server" Text="Cantidad disponible"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TxtModifcarCantidad" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="ValidadorCantidadDisponible" runat="server" ControlToValidate="TxtModifcarCantidad" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="TxtModificarCantidad" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="ValidadorCantidadDisponible" runat="server" ControlToValidate="TxtModificarCantidad" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -62,21 +84,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="LbMensajeProductoModificado" runat="server"></asp:Label>
+                    <td colspan="2"  class="text-center">
+                        <asp:Label ID="LbMensajeProductoModificado"  runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Button ID="BtnGuardarModificar" runat="server" OnClick="BtnGuardarMoficar_Click" Text="Modificar Producto" CssClass="btn btn-outline-info d-block mx-auto" />
+                    <td colspan="2" class="auto-style2">
+                        <asp:Button ID="BtnGuardarModificar" runat="server" Text="Modificar Producto" OnClick="BtnGuardarModificar_Click" CssClass="btn btn-outline-info d-block mx-auto" />
                     </td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
+              
             </table>
         </div>
     </div>

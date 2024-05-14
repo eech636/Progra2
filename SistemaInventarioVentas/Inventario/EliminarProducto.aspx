@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="text-center">
-                     <asp:Button ID="BtnEliminarProducto" runat="server" Text="Eliminar" CssClass="btn btn-outline-info d-block mx-auto" />
+                     <asp:Button ID="BtnEliminarProducto" runat="server" Text="Eliminar" OnClick="BtnEliminarProducto_Click" CssClass="btn btn-outline-info d-block mx-auto" />
                 </td>
             </tr>
         </table>
