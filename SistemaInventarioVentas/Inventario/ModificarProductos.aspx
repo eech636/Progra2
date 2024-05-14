@@ -35,17 +35,6 @@
                    
                 </tr>
                 <tr>
-                    <td cospa="2" class="auto-style2" >
-                         <asp:Label ID="LnModificarNombre" runat="server" Text="Nombre del producto"></asp:Label>
-                    </td>
-                    <td class="auto-style4">
-                            <asp:TextBox ID="TxtModificarNombre" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtModificarNombre" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
-                        </td>
-                </tr>
-                       
-
-                <tr>
                     <td class="auto-style3">
                         <asp:Label ID="LbModificarPrecio" runat="server" Text="Precio"></asp:Label>
                     </td>
@@ -54,24 +43,13 @@
                         <asp:RequiredFieldValidator ID="ValidadorModificarPrecio" runat="server" ControlToValidate="TxtModificarPrecio" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
-                <tr>
-                    <td cospa="2" class="auto-style2">
-                        <asp:Label ID="LbModificarPrecioCosto" runat="server" Text="PrecioCosto"></asp:Label>
-                    </td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="TxtPrecioCosto" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtPrecioCosto" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="LbModificarCantidadDisponible" runat="server" Text="Cantidad disponible"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TxtModificarCantidad" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="ValidadorCantidadDisponible" runat="server" ControlToValidate="TxtModificarCantidad" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="TxtModifcarCantidad" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="ValidadorCantidadDisponible" runat="server" ControlToValidate="TxtModifcarCantidad" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

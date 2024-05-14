@@ -60,33 +60,6 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.Button BtnModificarBuscar;
 
         /// <summary>
-        /// Control LnModificarNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LnModificarNombre;
-
-        /// <summary>
-        /// Control TxtModificarNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtModificarNombre;
-
-        /// <summary>
-        /// Control RequiredFieldValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-        /// <summary>
         /// Control LbModificarPrecio.
         /// </summary>
         /// <remarks>
@@ -114,33 +87,6 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorModificarPrecio;
 
         /// <summary>
-        /// Control LbModificarPrecioCosto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbModificarPrecioCosto;
-
-        /// <summary>
-        /// Control TxtPrecioCosto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPrecioCosto;
-
-        /// <summary>
-        /// Control RequiredFieldValidator2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
-        /// <summary>
         /// Control LbModificarCantidadDisponible.
         /// </summary>
         /// <remarks>
@@ -150,13 +96,13 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.Label LbModificarCantidadDisponible;
 
         /// <summary>
-        /// Control TxtModificarCantidad.
+        /// Control TxtModifcarCantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtModificarCantidad;
+        protected global::System.Web.UI.WebControls.TextBox TxtModifcarCantidad;
 
         /// <summary>
         /// Control ValidadorCantidadDisponible.

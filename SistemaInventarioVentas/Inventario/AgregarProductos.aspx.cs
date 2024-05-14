@@ -54,7 +54,7 @@ namespace SistemaInventarioVentas.Inventario
                 }
                 finally
                 {
-                   //Cierra la conexion con la BD 
+                   //Cierra la conexion con la BD
                     conexionAgregar.Close();
                 }
             }
