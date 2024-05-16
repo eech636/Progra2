@@ -12,7 +12,7 @@ namespace SistemaInventarioVentas.Inventario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AutenticacionValidador.ValidacionSesion(this);
         }
 
         protected void BtnGuardarArticulo_Click(object sender, EventArgs e)

@@ -11,10 +11,7 @@ namespace SistemaInventarioVentas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["NombreUsuario"] == null)
-            {
-                Response.Redirect("Autenticacion/Login.aspx");
-            }
+            AutenticacionValidador.ValidacionSesion(this);
         }
     }
 }

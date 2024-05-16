@@ -11,6 +11,7 @@ namespace SistemaInventarioVentas.Cliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AutenticacionValidador.ValidacionSesion(this);
 
         }
     }
