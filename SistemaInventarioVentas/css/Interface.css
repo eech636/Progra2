@@ -1,0 +1,45 @@
+﻿body {
+    background: url(../img/lg.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.modal-content {
+    background-color: ghostwhite;
+    opacity: 0.85;
+    box-shadow: 3px 3px 5px blue;
+}
+
+.form-group input {
+    border: 0;
+    padding-left: 35px;
+}
+
+.form-group::before {
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 55px;
+    font-size: 22px;
+    padding-top: 3px;
+}
+
+.form-group#user-group::before {
+    content: "\f2be";
+    color: blue;
+}
+
+.form-group#pass-group::before {
+    content: "\f046";
+    color: red;
+}
+
+.forgot {
+    font-size: 12px;
+}
+
+    .forgot a {
+        color: red;
+    }
+
+button {
+    width: 80%;
+}

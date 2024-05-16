@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <div class="container-fluid" align="center">
         <img src="img/logo.png" / width="100"/>
-        <h1>Proyecto de Investigación de Cátedra - Segunda FASE.</h1>
+        <h1>Proyecto de Investigación de Cátedra - CUARTA FASE.</h1>
     </div>
     <br />
     <div class="container-fluid">
@@ -34,12 +34,7 @@
               <th scope="row">2530962021</th>
               <td>DE LA O CHIQUILLO JOSUE JONATHAN</td>
               <td>100%</td>
-            </tr>              
-              <tr>
-              <th scope="row">1727852019</th>
-              <td>MERINO GARAY ROBERTO CARLOS</td>
-              <td>0%</td>
-            </tr>              
+            </tr>
               <tr>
               <th scope="row">2550532022</th>
               <td>PORTILLO PALACIOS FRANCISCO DAMIAN</td>
