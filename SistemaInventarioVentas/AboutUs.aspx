@@ -42,5 +42,6 @@
             </tr>
           </tbody>
         </table>
+        <%= Session["NombreRol"] %>
     </div>
 </asp:Content>

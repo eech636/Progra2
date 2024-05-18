@@ -18,13 +18,15 @@ namespace SistemaInventarioVentas
 
         public static void ValidacionPermisos (Page page, string rol)
         {
-            if (page.Session["NombreRol"]  !=null || page.Session["NombreRol"].ToString() == "ADMIN" )
-            {
-                return;
-            }
-            if (page.Session["NombreRol"] == null ||  page.Session["NombreRol"].ToString() != rol)
+            if (rol == "ADMIN" && (string)page.Session["NombreRol"] != "ADMIN")
             {
                 page.Response.Redirect("~/AboutUs.aspx");
+                return;
+            }
+            if (rol == "SUPERVISOR" && !((string)page.Session["NombreRol"] == "SUPERVISOR" || (string)page.Session["NombreRol"] == "ADMIN"))
+            {
+                page.Response.Redirect("~/AboutUs.aspx");
+                return;
             }
         }
     }

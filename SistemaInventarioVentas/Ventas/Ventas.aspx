@@ -20,20 +20,4 @@
             </tr>
         </table>
     </div>
-
-    <asp:Table ID="Table1" runat="server" CssClass="table">
-        <asp:TableHeaderRow runat="server">
-            <asp:TableHeaderCell runat="server">Dato 1</asp:TableHeaderCell>
-            <asp:TableHeaderCell runat="server">Dato 1</asp:TableHeaderCell>
-            <asp:TableHeaderCell runat="server">Dato 1</asp:TableHeaderCell>
-            <asp:TableHeaderCell runat="server">Dato 1</asp:TableHeaderCell>
-        </asp:TableHeaderRow>
-
-        <asp:TableRow runat="server">
-            <asp:TableCell runat="server">Something</asp:TableCell>
-            <asp:TableCell runat="server">Something</asp:TableCell>
-            <asp:TableCell runat="server">Something</asp:TableCell>
-            <asp:TableCell runat="server">Something</asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
 </asp:Content>

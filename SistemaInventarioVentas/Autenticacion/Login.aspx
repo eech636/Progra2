@@ -40,7 +40,6 @@
                             </div>
                             <div class="container mt-2">
                                 <asp:Button runat="server" ID="btnAcceder" class="btn btn-primary mt-2" Text="Acceder" OnClick="btnAcceder_Click"/>
-                                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="btnAcceder_Click"/>
                             </div>
                         </form>
                         <div class="col-12 forgot mt-3">

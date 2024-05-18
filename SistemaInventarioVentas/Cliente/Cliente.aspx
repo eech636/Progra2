@@ -19,5 +19,37 @@
                     </td>
                 </tr>
             </table>
+                <br />
+            <div class="container">
+                <table class="table">
+                      <thead class="table-light">
+                        <tr>
+                          <th scope="col">DUI</th>
+                          <th scope="col">Nombre Cliente</th>
+                          <th scope="col">Telefono Cliente</th>
+                          <th scope="col">Correo Cliente</th>
+                          <th scope="col">Direccion</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%  foreach (Dictionary<String, String> item in listacliente)  {  %>
+                        <tr>
+                            <td><%=item["DUI"]%></td>
+                            <td><%=item["NombreCliente"]%></td>
+                            <td><%=item["TelefonoCliente"]%></td>
+                            <td><%=item["CorreoCliente"]%></td>
+                            <td><%=item["Direccion"]%></td>
+                        </tr>
+                        <% }  %>
+                      </tbody>
+                </table>
+                <nav>
+                  <ul class="pagination">
+                    <%  for (int currentPage = 1; currentPage<= totalPaginas; currentPage ++)  {  %>
+                    <li class="page-item"><a class="page-link" href="?page=<%= currentPage %>"><%= currentPage %></a></li>
+                    <% }  %>
+                  </ul>
+                </nav>
+            </div>
         </div>
 </asp:Content>
