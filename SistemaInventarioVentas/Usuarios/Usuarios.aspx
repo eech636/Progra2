@@ -19,5 +19,39 @@
                     </td>
                 </tr>
             </table>
+                <br />
+                <div class="container">
+                    <table class="table">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">IdUsuario</th>
+                                <th scope="col">Nombre Usuario</th>
+                                <th scope="col">Clave</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">IdRol</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%  foreach (Dictionary<String, String> item in listausuarios)
+                                {  %>
+                            <tr>
+                                <td><%=item["IdUsuario"]%></td>
+                                <td><%=item["NombreUsuario"]%></td>
+                                <td><%=item["Clave"]%></td>
+                                <td><%=item["Email"]%></td>
+                                <td><%=item["IdRol"]%></td>
+                            </tr>
+                            <% }  %>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <%  for (int currentPage = 1; currentPage <= totalPaginas; currentPage++)
+                                {  %>
+                            <li class="page-item"><a class="page-link" href="?page=<%= currentPage %>"><%= currentPage %></a></li>
+                            <% }  %>
+                        </ul>
+                    </nav>
+                </div>
         </div>
 </asp:Content>
