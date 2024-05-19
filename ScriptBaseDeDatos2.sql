@@ -30,14 +30,20 @@ CREATE TABLE Usuarios (
 GO
 
 -- Creación de la tabla Clientes
-CREATE TABLE Clientes (
-    DUI NVARCHAR(10) PRIMARY KEY,
-    NombreCliente NVARCHAR(100),
-    TelefonoCliente NVARCHAR(15),
-    CorreoCliente NVARCHAR(100),
-    Direccion NVARCHAR(200)
-);
+
+CREATE TABLE [dbo].[Clientes](
+	[DUI] [nvarchar](10) NOT NULL,
+	[NombreCliente] [nvarchar](100) NULL,
+	[TelefonoCliente] [nvarchar](15) NULL,
+	[CorreoCliente] [nvarchar](100) NULL,
+	[Direccion] [nvarchar](200) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[DUI] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
+
 
 -- Creación de la tabla Ventas
 CREATE TABLE Ventas (
