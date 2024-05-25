@@ -24,8 +24,7 @@
                             </div>
                             <div>
                                 <asp:Label ID="LblRol" runat="server" Text="IdRol" CssClass="form-label text-danger fw-bold"></asp:Label>
-                                <asp:TextBox ID="TxtBoxRol" runat="server" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvRol" runat="server" ControlToValidate="TxtBoxRol" ErrorMessage="Ingrese bien los datos"></asp:RequiredFieldValidator>
+                                <asp:DropDownList runat="server" ID="DropBoxRol"></asp:DropDownList>
                             </div>
  
                             <div class="my-3">

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace SistemaInventarioVentas.Usuario
 {
@@ -17,6 +18,41 @@ namespace SistemaInventarioVentas.Usuario
             AutenticacionValidador.ValidacionSesion(this);
             AutenticacionValidador.ValidacionPermisos(this, "ADMIN");
 
+            if (!Page.IsPostBack)
+            {
+                populateRolesDropdown();
+            }
+        }
+
+        protected List<Dictionary<string, string>> systemRoles() {
+            List < Dictionary<string, string>> roles = new List<Dictionary<string, string>>();
+
+            SqlConnection conexion = Conexion.getInstance().ConexionBDProyect();
+
+            try
+            {
+                SqlCommand command = conexion.CreateCommand();
+                command.CommandText = "SELECT * FROM roles ORDER BY idRol DESC";
+                command.CommandType = CommandType.Text;
+
+                conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    roles.Add(new Dictionary<string, string>() {
+                        { "id", reader["idRol"].ToString() },
+                        { "name", reader["NombreRol"].ToString() }
+                    });
+                }
+
+                reader.Close();
+            }
+            catch (Exception e) {
+                Debug.WriteLine(e);
+            }
+
+            return roles;
         }
 
         protected void BtnIngresar_Click(object sender, EventArgs e)
@@ -26,7 +62,7 @@ namespace SistemaInventarioVentas.Usuario
                 string NombreUsuario = TxtBoxNombreUsuario.Text.ToString();
                 string clave = TxtBoxClave.Text.ToString();
                 string Email = TxtBoxEmail.Text.ToString();
-                string Rol = TxtBoxRol.Text.ToString();
+                string Rol = DropBoxRol.Text.ToString();
 
 
                 SqlConnection conexion = null;
@@ -84,6 +120,14 @@ namespace SistemaInventarioVentas.Usuario
             }
             
 
+        }
+
+        private void populateRolesDropdown()
+        {
+            foreach (Dictionary<string, string> role in systemRoles())
+            {
+                DropBoxRol.Items.Add(new ListItem() { Text = role["name"], Value = role["id"] });
+            }
         }
 
     }
