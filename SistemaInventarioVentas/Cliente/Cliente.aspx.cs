@@ -18,10 +18,10 @@ namespace SistemaInventarioVentas.Cliente
         protected void Page_Load(object sender, EventArgs e)
         {
             AutenticacionValidador.ValidacionSesion(this);
-            sqlClientes();
-            totalRegistros();
+            SqlClientes();
+            TotalRegistros();
         }
-        private void sqlClientes()
+        private void SqlClientes()
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
@@ -61,7 +61,7 @@ namespace SistemaInventarioVentas.Cliente
                 }
             }
         }
-        private void totalRegistros()
+        private void TotalRegistros()
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
