@@ -123,22 +123,13 @@ namespace SistemaInventarioVentas.Usuario
         protected global::System.Web.UI.WebControls.Label LblRol;
 
         /// <summary>
-        /// TxtBoxRol control.
+        /// DropBoxRol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxRol;
-
-        /// <summary>
-        /// rfvRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRol;
+        protected global::System.Web.UI.WebControls.DropDownList DropBoxRol;
 
         /// <summary>
         /// LblError control.

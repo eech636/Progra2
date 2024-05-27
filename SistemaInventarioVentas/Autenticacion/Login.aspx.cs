@@ -29,7 +29,7 @@ namespace SistemaInventarioVentas.Autenticacion
                     conexionBuscar.Open();
 
                     // Query para la consulta SQL para buscar el producto
-                    string queryBuscar = "SELECT IdUsuario, NombreUsuario, NombreRol FROM Usuarios INNER JOIN Roles ON Usuarios.IdRol = Roles.IdRol WHERE Nombreusuario = @NombreUsuario and Clave = @Clave";
+                    string queryBuscar = "SELECT IdUsuario, NombreUsuario, NombreRol FROM Usuarios INNER JOIN Roles ON Usuarios.IdRol = Roles.IdRol WHERE NombreUsuario = @NombreUsuario and Clave = @Clave";
 
                     // Crea el comando SQL
                     SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
