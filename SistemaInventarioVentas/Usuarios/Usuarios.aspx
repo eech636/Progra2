@@ -14,7 +14,7 @@
                         <asp:TemplateField HeaderText="Acciones">
                             <ItemTemplate>
                                 <div class="d-flex ps-2 pe-2">
-                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger me-2" OnClick="btnEliminar_Click"/>
+                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger prueba me-2" OnClick="btnEliminar_Click"/>
                                     <a class="btn btn-success" href="ModificarUsuario.aspx">Actualizar</a>                                           
                                 </div>                                        
                             </ItemTemplate>
