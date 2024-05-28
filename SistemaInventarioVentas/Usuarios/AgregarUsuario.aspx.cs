@@ -61,7 +61,7 @@ namespace SistemaInventarioVentas.Usuario
             {
                 string NombreUsuario = TxtBoxNombreUsuario.Text.ToString();
                 string clave = TxtBoxClave.Text.ToString();
-                string Email = TxtBoxEmail.Text.ToString();
+                string Email = TextBoxEmail.Text.ToString();
                 string Rol = DropBoxRol.Text.ToString();
 
 
@@ -129,6 +129,5 @@ namespace SistemaInventarioVentas.Usuario
                 DropBoxRol.Items.Add(new ListItem() { Text = role["name"], Value = role["id"] });
             }
         }
-
     }
 }

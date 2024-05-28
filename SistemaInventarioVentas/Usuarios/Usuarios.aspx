@@ -9,43 +9,27 @@
             </div>
             <br />
             <div class="container">
-                        <table class="table">
-                            <thead class="table-light">
-                                <tr>
-                                    <th scope="col">IdUsuario</th>
-                                    <th scope="col">Nombre Usuario</th>
-                                    <th scope="col">Clave</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">IdRol</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <%  foreach (Dictionary<String, String> item in listausuarios)
-                                    {  %>
-                                <tr>
-                                    <td><%=item["IdUsuario"]%></td>
-                                    <td><%=item["NombreUsuario"]%></td>
-                                    <td><%=item["Clave"]%></td>
-                                    <td><%=item["Email"]%></td>
-                                    <td><%=item["IdRol"]%></td>
-                                    <td>
-                                        <!-- Botones de Modificar y Eliminar -->
-                                        <button type="button" class="btn btn-primary">Modificar</button>
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                    </td>
-                                </tr>
-                                <% }  %>
-                            </tbody>
-                        </table>
-                        <nav>
-                            <ul class="pagination">
-                                <%  for (int currentPage = 1; currentPage <= totalPaginas; currentPage++)
-                                    {  %>
-                                <li class="page-item"><a class="page-link" href="?page=<%= currentPage %>"><%= currentPage %></a></li>
-                                <% }  %>
-                            </ul>
-                        </nav>
+                <asp:GridView  ID="GdvUsuarios" CssClass="table table-light table-hover text-center"   runat="server"> 
+                    <Columns>
+                        <asp:TemplateField HeaderText="Acciones">
+                            <ItemTemplate>
+                                <div class="d-flex ps-2 pe-2">
+                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger me-2" OnClick="btnEliminar_Click"/>
+                                    <a class="btn btn-success" href="ModificarUsuario.aspx">Actualizar</a>                                           
+                                </div>                                        
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+
+                <nav>
+                    <ul class="pagination">
+                        <%  for (int currentPage = 1; currentPage <= totalPaginas; currentPage++)
+                            {  %>
+                        <li class="page-item"><a class="page-link" href="?page=<%= currentPage %>"><%= currentPage %></a></li>
+                        <% }  %>
+                    </ul>
+                </nav>
             </div>
         </div>
 </asp:Content>
