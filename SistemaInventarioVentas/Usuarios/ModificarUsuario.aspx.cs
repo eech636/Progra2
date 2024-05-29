@@ -72,7 +72,7 @@ namespace SistemaInventarioVentas.Usuario
                 else
                 {
                     LblError.CssClass = "alert alert-warning";
-                    LblError.Text = "Usuario no Modificado.";
+                    LblError.Text = "Usuario no modificado.";
 
                 }
                 conexion.Close();

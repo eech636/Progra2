@@ -87,13 +87,13 @@ namespace SistemaInventarioVentas.Usuario
         protected global::System.Web.UI.WebControls.Label LblEmail;
 
         /// <summary>
-        /// Control TxtBoxEmail.
+        /// TextBoxEmail control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxEmail;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
 
         /// <summary>
         /// Control RequiredFieldValidator1.
@@ -105,13 +105,13 @@ namespace SistemaInventarioVentas.Usuario
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// Control RegularExpressionValidator.
+        /// RegularExpressionValidator2 control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
         /// Control LblRol.
