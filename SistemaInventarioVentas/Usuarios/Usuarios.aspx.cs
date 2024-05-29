@@ -26,12 +26,16 @@ namespace SistemaInventarioVentas.Usuario
             {
                 try
                 {
-                    // Abrir la coonexion creada
+                    // Abrir la conexion creada
                     conexionBuscar.Open();
                     double offSet = (string.IsNullOrEmpty(Request.QueryString["page"]) ? 0 : int.Parse(Request.QueryString["page"]) - 1) * tPages;
 
                     // Query para la consulta SQL para buscar 
-                    string queryBuscar = "SELECT * FROM Usuarios order by IdUsuario offset " + offSet + "rows fetch next " + tPages + " rows only";
+                    string queryBuscar = "SELECT u.IdUsuario, u.NombreUsuario, u.Email, r.NombreRol " +
+                                         "FROM Usuarios u " +
+                                         "JOIN Roles r ON u.IdRol = r.IdRol " +
+                                         "ORDER BY u.IdUsuario " +
+                                         "OFFSET " + offSet + " ROWS FETCH NEXT " + tPages + " ROWS ONLY";
 
                     // Crea el comando SQL
                     SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
@@ -41,17 +45,17 @@ namespace SistemaInventarioVentas.Usuario
                     while (reader.Read())
                     {
                         listausuarios.Add(new Dictionary<String, String>(){
-                            {"IdUsuario", reader["IdUsuario"].ToString()},
-                            {"NombreUsuario", reader["NombreUsuario"].ToString()},
-                            {"Clave", reader["Clave"].ToString()},
-                            {"Email", reader["Email"].ToString()},
-                            {"IdRol", reader["IdRol"].ToString()},
-                        });
+                    {"IdUsuario", reader["IdUsuario"].ToString()},
+                    {"NombreUsuario", reader["NombreUsuario"].ToString()},
+                    {"Email", reader["Email"].ToString()},
+                    {"NombreRol", reader["NombreRol"].ToString()},
+                });
                     }
                     reader.Close();
                 }
                 catch (Exception ex)
                 {
+                    // Manejar la excepción según sea necesario
                 }
                 finally
                 {
