@@ -23,27 +23,46 @@
                             <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" CssClass="btn btn-outline-info"/>
                         </div>
 
-                        <br />
+                            <br />
                             <div class="input-group">
-                                <asp:Label ID="Label2" runat="server" Text="Telefono" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                                <asp:TextBox ID="TxtTelefono" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
-                            <!--validaciones -->
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtTelefono" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                            
+                                <asp:Label ID="LblDUI" runat="server" Text="DUI del Cliente" ForeColor="Blue" CssClass="form-control"></asp:Label>
+                                <asp:TextBox ID="TxtDUI" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
+                                <!--validaciones -->
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TextDUI" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                
+                            </div>
+
+                            <br />
+                            <div class="input-group">
+                                <asp:Label ID="LblnombC" runat="server" Text="Nombre del Cliente" ForeColor="Blue" CssClass="form-control"></asp:Label>
+                                <asp:TextBox ID="TextNomCliente" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
+                                <!--validaciones -->
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtNomCliente" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+
+                            <br />
+                            <div class="input-group">
+                                <asp:Label ID="Label4" runat="server" Text="Telefono" ForeColor="Blue" CssClass="form-control"></asp:Label>
+                                <asp:TextBox ID="TxtTelefono" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox><asp:RangeValidator runat="server" ControlToValidate="TxtTelefono" ErrorMessage="Ingrese bien los Números" MaximumValue="9" Display="Dynamic" ForeColor="Red" MinimumValue="0"></asp:RangeValidator>
+                                <!--validaciones -->
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtTelefono" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Telefono ya existente" ControlToValidate="TxtTelefono" Display="Dynamic" ForeColor="Red"></asp:CustomValidator>
+
                             </div>
                             <div class="input-group">
-                                <asp:Label ID="Label3" runat="server" Text="Email" ForeColor="Blue" CssClass="form-control"></asp:Label>
+                                <asp:Label ID="Label5" runat="server" Text="Email" ForeColor="Blue" CssClass="form-control"></asp:Label>
                                 <asp:TextBox ID="TxtEmail" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
-                            <!-- validaciones -->
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtEmail" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <!-- validaciones -->
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtEmail" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato de correo no valido" ControlToValidate="TxtEmail" ValidationExpression="^[\w-\.]+@([\wx-]+\.)+[\w-]{2,4}$" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
-                            
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator" runat="server" ControlToValidate="TxtEmail" ErrorMessage="Por favor, Ingrese una direccion de correo electronico valida" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
+
                             </div>
                             <div class="input-group">
-                                <asp:Label ID="Label4" runat="server" Text="Direccion" ForeColor="Blue" CssClass="form-control"></asp:Label>
+                                <asp:Label ID="Label6" runat="server" Text="Direccion" ForeColor="Blue" CssClass="form-control"></asp:Label>
                                 <asp:TextBox ID="TxtDireccion" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
                             <!--validaciones -->
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtDireccion" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo requerido" ControlToValidate="TxtDireccion" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
 
                             <br />
@@ -52,7 +71,7 @@
                             </div>
                             <br />
                             <div class="conteiner d-flex justify-content-center">
-                                <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="LblError" runat="server" Text=""></asp:Label>
                             </div>
                     </fieldset>
                 </div>

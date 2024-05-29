@@ -26,7 +26,7 @@
 
                     <br />
                     <div class="container d-flex justify-content-center">
-                        <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="LblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                     </div>
                 </fieldset>
             </div>
