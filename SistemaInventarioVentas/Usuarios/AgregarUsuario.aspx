@@ -35,7 +35,8 @@
                             </div>
                             <div class="pt-2">
                                 <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-outline-primary" OnClick="BtnIngresar_Click" /> 
-                               <asp:Button ID="BtnRegresar" runat="server" Text="Regresar al menu" CssClass="btn btn-outline-primary" OnClick="BtnRegresar_Click" CausesValidation="false" />
+                               
+                                <a href="Usuarios.aspx" class="btn btn-outline-primary" > Regresar al menu  </a>
 
                             </div>
                             

@@ -9,13 +9,16 @@
             </div>
             <br />
             <div class="container">
-                <asp:GridView  ID="GdvUsuarios" CssClass="table table-light table-hover text-center"   runat="server"> 
+                <asp:GridView AutoGenerateColumns="false" ID="GdvUsuarios" CssClass="table table-light table-hover text-center"   runat="server"> 
                     <Columns>
-                        <asp:TemplateField HeaderText="Acciones">
+                        <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre"/>
+                        <asp:BoundField DataField="Email" HeaderText="Correo"/> 
+                        <asp:BoundField DataField="NombreRol" HeaderText="Rol"/>
+                        <asp:TemplateField  HeaderText="Acciones">
                             <ItemTemplate>
-                                <div class="d-flex ps-2 pe-2">
-                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger prueba me-2" OnClick="btnEliminar_Click"/>
-                                    <a class="btn btn-success" href="ModificarUsuario.aspx">Actualizar</a>                                           
+                                <div class="d-flex justify-content-center ColumnaAcciones">
+                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger prueba me-" OnClick="btnEliminar_Click"/>
+                                    <a class="btn btn-success ms-2"  href="ModificarUsuario.aspx">Actualizar</a>                                           
                                 </div>                                        
                             </ItemTemplate>
                         </asp:TemplateField>
