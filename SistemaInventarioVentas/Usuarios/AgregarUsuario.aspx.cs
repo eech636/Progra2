@@ -61,7 +61,7 @@ namespace SistemaInventarioVentas.Usuario
             {
                 string NombreUsuario = TxtBoxNombreUsuario.Text.ToString();
                 string clave = TxtBoxClave.Text.ToString();
-                string Email = TxtBoxEmail.Text.ToString();
+                string Email = TextBoxEmail.Text.ToString();
                 string Rol = DropBoxRol.Text.ToString();
 
 
@@ -87,7 +87,24 @@ namespace SistemaInventarioVentas.Usuario
                     reader.Close();
                     return;
                 }
-                reader.Close ();
+
+                reader.Close();
+
+                //Validacion de CorreoElectronico
+                Comando = new SqlCommand("SELECT * FROM Usuarios WHERE Email = @Email", conexion);
+                Comando.CommandType = CommandType.Text;
+                Comando.Parameters.AddWithValue("@Email", Email);
+
+                reader = Comando.ExecuteReader();   
+
+                if (reader.HasRows)
+                {
+                    LblError.CssClass = "alert alert-warning";
+                    LblError.Text = "El Email ya esxiste.";
+                    reader.Close();
+                    return;
+                }
+                
 
                 // Definimos un objeto para manejar la instrucción SQL
                 Comando = new SqlCommand("INSERT INTO Usuarios (NombreUsuario, Clave, Email, IdRol) values (@NombreUsuario, @Clave, @Email, @IdRol)", conexion);
@@ -129,6 +146,5 @@ namespace SistemaInventarioVentas.Usuario
                 DropBoxRol.Items.Add(new ListItem() { Text = role["name"], Value = role["id"] });
             }
         }
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -11,16 +12,56 @@ namespace SistemaInventarioVentas.Usuario
     public partial class Usuarios : System.Web.UI.Page
     {
         public List<Dictionary<String, String>> listausuarios = new List<Dictionary<String, String>>();
+        public DataSet ds = new DataSet();  
         public double totalPaginas = 0;
         public double tPages = 10;
+        public string id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            AutenticacionValidador.ValidacionSesion(this);
-            AutenticacionValidador.ValidacionPermisos(this, "ADMIN");
-            sqlUsuarios();
-            totalRegistros();
+            if (!IsPostBack )
+            {
+                //agregar las otras lineas
+                AutenticacionValidador.ValidacionSesion(this);
+                AutenticacionValidador.ValidacionPermisos(this, "ADMIN");
+                GdvUsuarios.DataSource = SqlUsuarios();
+                GdvUsuarios.DataBind();
+                TotalRegistros();
+            }
+ 
+          
+            
         }
-        private void sqlUsuarios()
+        protected void EliminarUsuariodb(int Id)
+        {
+            using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
+            {
+                try
+                {
+                    // Abrir la coonexion creada
+                    conexionBuscar.Open();
+                   
+
+                    // Query para la consulta SQL para buscar 
+                    string queryEliminarUsuario = "DELETE * FROM Usuarios WHERE IdUsuario = @IdUsuario"; 
+
+                    // Crea el comando SQL
+                    SqlCommand cmdBuscar = new SqlCommand(queryEliminarUsuario, conexionBuscar);
+                    cmdBuscar.Parameters.AddWithValue("@IdUsuario", Id);
+                    cmdBuscar.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    string script = "alert('Se produjo un error: " + ex.Message + "');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                }
+                finally
+                {
+                    // Cierra la conexión
+                    conexionBuscar.Close();
+                }
+            }
+        }
+        private DataSet SqlUsuarios()
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
@@ -33,25 +74,13 @@ namespace SistemaInventarioVentas.Usuario
                     // Query para la consulta SQL para buscar 
                     string queryBuscar = "SELECT * FROM Usuarios order by IdUsuario offset " + offSet + "rows fetch next " + tPages + " rows only";
 
-                    // Crea el comando SQL
-                    SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
-
-                    // Ejecuta la consulta con el dataReader y lee la informacion
-                    SqlDataReader reader = cmdBuscar.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        listausuarios.Add(new Dictionary<String, String>(){
-                            {"IdUsuario", reader["IdUsuario"].ToString()},
-                            {"NombreUsuario", reader["NombreUsuario"].ToString()},
-                            {"Clave", reader["Clave"].ToString()},
-                            {"Email", reader["Email"].ToString()},
-                            {"IdRol", reader["IdRol"].ToString()},
-                        });
-                    }
-                    reader.Close();
+                    SqlDataAdapter reader = new SqlDataAdapter(queryBuscar, conexionBuscar);
+                    reader.Fill(ds);
+                    return ds;
                 }
                 catch (Exception ex)
                 {
+                    throw new Exception($"Error: {ex.Message}");
                 }
                 finally
                 {
@@ -60,7 +89,7 @@ namespace SistemaInventarioVentas.Usuario
                 }
             }
         }
-        private void totalRegistros()
+        private void TotalRegistros()
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
@@ -78,7 +107,7 @@ namespace SistemaInventarioVentas.Usuario
                     double tP = totalUsuarios / tPages;
                     totalPaginas = Math.Ceiling(tP);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
                 finally
@@ -87,6 +116,20 @@ namespace SistemaInventarioVentas.Usuario
                     conexionBuscar.Close();
                 }
             }
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Button btnEliminar = (Button)sender;
+            GridViewRow fila = (GridViewRow)btnEliminar.NamingContainer;
+
+            id = fila.Cells[1].Text;
+            Response.Redirect("/Usuarios/EliminarUsuario.aspx?id=" + id);
         }
     }
 }
