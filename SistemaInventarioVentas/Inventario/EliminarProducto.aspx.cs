@@ -13,13 +13,16 @@ namespace SistemaInventarioVentas.Inventario
         protected void Page_Load(object sender, EventArgs e)
         {
             AutenticacionValidador.ValidacionSesion(this);
+
+            // Obtiene el ID del producto a eliminar desde la URL
+            int idProducto = Convert.ToInt32(Request.QueryString["id"]);
+
+            // Llama al método para eliminar el producto
+            BtnEliminarProducto_Click(idProducto);
         }
 
-        protected void BtnEliminarProducto_Click(object sender, EventArgs e)
+        protected void BtnEliminarProducto_Click(int idProducto)
         {
-            // Obtiene el ID del producto a eliminar
-            int idProducto = Convert.ToInt32(TxtIdProducto.Text);
-
             // Crea la conexión a la base de datos
             using (SqlConnection conexionEliminar = Conexion.getInstance().ConexionBDProyect())
             {
@@ -40,25 +43,23 @@ namespace SistemaInventarioVentas.Inventario
                     // Verifica si se eliminó el producto correctamente
                     if (filasAfectadas > 0)
                     {
-                        LbMensajeEliminar.Text = "Producto eliminado correctamente.";
+                        // Redirige a la página de inventario
+                        Response.Redirect("~SistemaInventarioVentas.Inventario.MenuProductos.aspx");
                     }
                     else
                     {
-                        LbMensajeEliminar.Text = "No se encontró ningún producto con el ID especificado.";
+                        Response.Write("<script>alert('No se encontró ningún producto con el ID especificado.');</script>");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Label de mensaje en caso se produzca un error al eliminar el producto
-                    LbMensajeEliminar.Text = "Error al eliminar el producto: " + ex.Message;
+                    Response.Write("<script>alert('Error al eliminar el producto: " + ex.Message + "');</script>");
                 }
                 finally
                 {
-                    // Cierra la conexión
                     conexionEliminar.Close();
                 }
             }
         }
-
     }
 }

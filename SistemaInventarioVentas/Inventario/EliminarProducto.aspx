@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="text-center">
-                    <asp:Label ID="LbMensajeEliminar" runat="server"></asp:Label>
+                    <asp:Label ID="LbMensajeEliminar" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
             <tr>

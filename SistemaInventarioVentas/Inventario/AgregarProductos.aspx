@@ -23,6 +23,7 @@
                     <td>
                         <asp:TextBox ID="TxtPrecio" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="ValidadarPrecio" runat="server" ControlToValidate="TxtPrecio" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TxtPrecio" ErrorMessage="Ingrese bien el Precio" MaximumValue="1000" MinimumValue="0" ForeColor="Red"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
@@ -41,6 +42,9 @@
                     <td>
                         <asp:TextBox ID="TxtPrecioCosto" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="ValidadorPrecioCosto" runat="server" ControlToValidate="TxtPrecioCosto" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="ValidadorPrecioCostoNegativo" runat="server" ControlToValidate="TxtPrecioCosto" ValueToCompare="0" Operator="GreaterThanEqual" Type="Double" ErrorMessage="El precio no puede ser negativo" ForeColor="Red"></asp:CompareValidator>
+                        <asp:CustomValidator ID="ValidadorPrecioCostoMayor" runat="server" ControlToValidate="TxtPrecioCosto" ErrorMessage="El precio de costo no puede ser mayor que el precio de venta" ForeColor="Red" OnServerValidate="ValidadorPrecioCostoMayor_ServerValidate"></asp:CustomValidator>
+
                     </td>
                 </tr>
                 <tr>
@@ -49,12 +53,11 @@
                     </td>
                     <td class="auto-style6">
                         <asp:TextBox ID="TxtDescricionArticulo" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="ValidadorDescripcion" runat="server" ControlToValidate="TxtDescricionArticulo" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="text-center">
-                        <asp:Label ID="LabelMensajeAgregar" runat="server" ></asp:Label>
+                        <asp:Label ID="LabelMensajeAgregar" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                 </tr>
                 <tr>

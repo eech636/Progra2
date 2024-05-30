@@ -69,6 +69,15 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadarPrecio;
 
         /// <summary>
+        /// Control RangeValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+
+        /// <summary>
         /// Control LbCantidadDisponible.
         /// </summary>
         /// <remarks>
@@ -123,6 +132,24 @@ namespace SistemaInventarioVentas.Inventario
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorPrecioCosto;
 
         /// <summary>
+        /// Control ValidadorPrecioCostoNegativo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator ValidadorPrecioCostoNegativo;
+
+        /// <summary>
+        /// Control ValidadorPrecioCostoMayor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidadorPrecioCostoMayor;
+
+        /// <summary>
         /// Control LbDesscripcion.
         /// </summary>
         /// <remarks>
@@ -139,15 +166,6 @@ namespace SistemaInventarioVentas.Inventario
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtDescricionArticulo;
-
-        /// <summary>
-        /// Control ValidadorDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorDescripcion;
 
         /// <summary>
         /// Control LabelMensajeAgregar.

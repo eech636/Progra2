@@ -13,53 +13,72 @@ namespace SistemaInventarioVentas.Inventario
         protected void Page_Load(object sender, EventArgs e)
         {
             AutenticacionValidador.ValidacionSesion(this);
+            AutenticacionValidador.ValidacionPermisos(this, "ADMIN");
         }
 
         protected void BtnGuardarArticulo_Click(object sender, EventArgs e)
         {
-            //Obtiene los datos del producto a ingresar
-            string nombre = TxtNombreArticulo.Text;
-            decimal precio = Convert.ToDecimal(TxtPrecio.Text);
-            int cantidadDisponible = Convert.ToInt32(TxtCantidadDisponible.Text);
-            decimal precioCosto = Convert.ToDecimal(TxtPrecioCosto.Text);
-            string descripcion = TxtDescricionArticulo.Text;
-
-            //Estable la conexion a la BD creando la instancia
-            using (SqlConnection conexionAgregar = Conexion.getInstance().ConexionBDProyect())
+            // Verifica si la página es válida
+            if (Page.IsValid)
             {
-                try
+                // Obtiene los datos del producto a ingresar
+                string nombre = TxtNombreArticulo.Text;
+                decimal precio = Convert.ToDecimal(TxtPrecio.Text);
+                int cantidadDisponible = Convert.ToInt32(TxtCantidadDisponible.Text);
+                decimal precioCosto = Convert.ToDecimal(TxtPrecioCosto.Text);
+                string descripcion = TxtDescricionArticulo.Text;
+
+                // Establece la conexión a la BD creando la instancia
+                using (SqlConnection conexionAgregar = Conexion.getInstance().ConexionBDProyect())
                 {
-                    //Abre la conexion
-                    conexionAgregar.Open();
+                    try
+                    {
+                        // Abre la conexión
+                        conexionAgregar.Open();
 
-                   //Crea el query insert para registrar los datos del producto
-                    string queryAgregar = "INSERT INTO Productos (NombreProducto, Precio, CantidadDisponible, PrecioCosto, Descripcion) " +
-                                   "VALUES ('" + nombre + "', " + precio + ", " + cantidadDisponible + ", " + precioCosto + ", '" + descripcion + "')";
+                        // Crea el query insert para registrar los datos del producto
+                        string queryAgregar = "INSERT INTO Productos (NombreProducto, Precio, CantidadDisponible, PrecioCosto, Descripcion) " +
+                                       "VALUES ('" + nombre + "', " + precio + ", " + cantidadDisponible + ", " + precioCosto + ", '" + descripcion + "')";
 
-                   //Ejecuta el query con los datos
-                    SqlCommand cmd = new SqlCommand(queryAgregar, conexionAgregar);
-                    cmd.ExecuteNonQuery();
+                        // Ejecuta el query con los datos
+                        SqlCommand cmd = new SqlCommand(queryAgregar, conexionAgregar);
+                        cmd.ExecuteNonQuery();
 
-                    //label de mensaje de que se ha registrado el producto
-
-                    LabelMensajeAgregar.Text = "El producto se agrego exitosamente";
-
+                        // Label de mensaje de que se ha registrado el producto
+                        LabelMensajeAgregar.Text = "El producto se agregó exitosamente";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Label de mensaje de error en caso de que se produzca un error en el registro del producto
+                        LabelMensajeAgregar.Text = "Error al agregar el producto: " + ex.Message;
+                    }
+                    finally
+                    {
+                        // Cierra la conexión con la BD 
+                        conexionAgregar.Close();
+                    }
                 }
-                //Arroja label de mensaje de error en caso de produczca un error en el registro del producto
+            }
+            else
+            {
+                // Muestra un mensaje de error si la página no es válida
+                LabelMensajeAgregar.Text = "Por favor, corrija los errores en el formulario antes de continuar";
+            }
+        }
+        protected void ValidadorPrecioCostoMayor_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            decimal precioCosto = Convert.ToDecimal(TxtPrecio.Text);
+            decimal precioVenta = Convert.ToDecimal(TxtPrecio.Text); 
 
-                catch (Exception ex)
-                {
-
-                    LabelMensajeAgregar.Text = "Error al agregar el producto: " + ex.Message;
-                }
-                finally
-                {
-                   //Cierra la conexion con la BD 
-                    conexionAgregar.Close();
-                }
+            if (precioCosto > precioVenta)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
             }
         }
 
-        
     }
 }

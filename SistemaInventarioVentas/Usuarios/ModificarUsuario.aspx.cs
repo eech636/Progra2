@@ -13,22 +13,54 @@ namespace SistemaInventarioVentas.Usuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             AutenticacionValidador.ValidacionSesion(this);
             AutenticacionValidador.ValidacionPermisos(this, "ADMIN");
 
+            if (!IsPostBack)
+            {
+                string idUsuario = Request.QueryString["idUsuario"];
+                if (idUsuario != null)
+                {
+                    SqlConnection conexion = null;
+                    SqlCommand Comando = null;
+
+                    // Instanciamos el objeto "conexion"
+                    conexion = Conexion.getInstance().ConexionBDProyect();
+
+                    // Consultamos el registro a la base de datos
+                    Comando = new SqlCommand("SELECT * FROM Usuarios WHERE IdUsuario = @IdUsuario", conexion);
+                    Comando.CommandType = CommandType.Text;
+                    Comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                    conexion.Open();
+
+                    SqlDataReader reader = Comando.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            TxtBoxNombreUsuario.Text = reader["NombreUsuario"].ToString();
+                            TxtBoxClave.Text = reader["Clave"].ToString();
+                            TxtBoxEmail.Text = reader["Email"].ToString();
+                            TxtBoxRol.Text = reader["IdRol"].ToString();
+                        }
+                    }
+                    reader.Close();
+                    conexion.Close();
+                }
+            }
         }
 
-        protected void BtnModificar_Click(object sender, EventArgs e)
+
+        protected void BtnModificar_Click(object sender, EventArgs e, object IdUsuario)
         {
             try
             {
-                string IdUsuario = TxtIdUsuario.Text.ToString();
                 string NombreUsuario = TxtBoxNombreUsuario.Text.ToString();
                 string clave = TxtBoxClave.Text.ToString();
                 string Email = TxtBoxEmail.Text.ToString();
                 string Rol = TxtBoxRol.Text.ToString();
-
 
                 SqlConnection conexion = null;
                 SqlCommand Comando = null;
@@ -57,7 +89,7 @@ namespace SistemaInventarioVentas.Usuario
                 // Definimos un objeto para manejar la instrucción SQL
                 Comando = new SqlCommand($"Update Usuarios set NombreUsuario=@NombreUsuario, Clave=@Clave, Email=@Email, IdRol=@IdRol WHERE IdUsuario={IdUsuario}", conexion);
                 Comando.CommandType = CommandType.Text;
-                
+
                 Comando.Parameters.AddWithValue("@NombreUsuario", NombreUsuario);
                 Comando.Parameters.AddWithValue("@Clave", clave);
                 Comando.Parameters.AddWithValue("@Email", Email);

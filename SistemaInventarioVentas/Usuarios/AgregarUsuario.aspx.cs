@@ -26,7 +26,7 @@ namespace SistemaInventarioVentas.Usuario
                 string NombreUsuario = TxtBoxNombreUsuario.Text.ToString();
                 string clave = TxtBoxClave.Text.ToString();
                 string Email = TxtBoxEmail.Text.ToString();
-                string Rol = TxtBoxRol.Text.ToString();
+                //string Rol = TxtBoxRol.Text.ToString();
 
 
                 SqlConnection conexion = null;
@@ -59,7 +59,7 @@ namespace SistemaInventarioVentas.Usuario
                 Comando.Parameters.AddWithValue("@NombreUsuario", NombreUsuario);
                 Comando.Parameters.AddWithValue("@Clave", clave);
                 Comando.Parameters.AddWithValue("@Email", Email);
-                Comando.Parameters.AddWithValue("@IdRol", Rol);
+                //Comando.Parameters.AddWithValue("@IdRol", Rol);
 
                 // Almacenamos la cantidad de filas afectadas por la consulta SQL
                 int filas = Comando.ExecuteNonQuery();
