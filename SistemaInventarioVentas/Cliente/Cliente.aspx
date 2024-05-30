@@ -15,7 +15,7 @@
                             <ItemTemplate>
                                 <div class="d-flex ps-2 pe-2">
                                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger prueba me-2" OnClick="btnEliminar_Click"/>
-                                    <a class="btn btn-success" href="ModificarCliente.aspx">Actualizar</a>                                           
+                                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-success prueba me-2" OnClick="btnActualizar_Click"/>                                        
                                 </div>                                        
                             </ItemTemplate>
                         </asp:TemplateField>

@@ -94,5 +94,14 @@ namespace SistemaInventarioVentas.Cliente
             id = fila.Cells[1].Text;
             Response.Redirect("/Cliente/EliminarCliente.aspx?id=" + id);
         }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Button btnActualizar = (Button)sender;
+            GridViewRow fila = (GridViewRow)btnActualizar.NamingContainer;
+
+            id = fila.Cells[1].Text;
+            Response.Redirect("/Cliente/ModificarCliente.aspx?id=" + id);
+        }
     }
 }

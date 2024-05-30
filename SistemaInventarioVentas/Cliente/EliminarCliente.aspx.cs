@@ -42,8 +42,8 @@ namespace SistemaInventarioVentas.Cliente
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
-                //try
-                //{
+                try
+                {
                     // Abrir la coonexion creada
                     conexionBuscar.Open();
                     // Query para la consulta SQL para buscar el producto
@@ -53,16 +53,16 @@ namespace SistemaInventarioVentas.Cliente
                     SqlDataAdapter reader = new SqlDataAdapter(queryBuscar, conexionBuscar);
                     reader.Fill(ds);
                     return ds;
-                //}
-                //catch (Exception ex)
-                //{
-                    //throw new Exception(ex.Message);
-                //}
-                /*finally
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
                 {
                     // Cierra la conexión
-                    //conexionBuscar.Close();
-                }*/
+                    conexionBuscar.Close();
+                }
             }
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
