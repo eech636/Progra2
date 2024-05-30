@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,15 +15,21 @@ namespace SistemaInventarioVentas.Cliente
     public partial class Cliente : System.Web.UI.Page
     {
         public List<Dictionary<String, String>> listacliente = new List<Dictionary<String, String>>();
+        public DataSet ds = new DataSet();
         public double totalPaginas = 0;
         public double tPages = 10;
+        public string id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            AutenticacionValidador.ValidacionSesion(this);
-            sqlClientes();
-            totalRegistros();
+            if (!IsPostBack)
+            {
+                AutenticacionValidador.ValidacionSesion(this);
+                GdvClientes.DataSource = SqlClientes();
+                GdvClientes.DataBind();
+                TotalRegistros();
+            }
         }
-        private void sqlClientes()
+        private DataSet SqlClientes()
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
@@ -34,25 +42,14 @@ namespace SistemaInventarioVentas.Cliente
                     // Query para la consulta SQL para buscar el producto
                     string queryBuscar = "SELECT * FROM Clientes order by DUI offset " + offSet + "rows fetch next " + tPages + " rows only";
 
-                    // Crea el comando SQL
-                    SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
-
-                    // Ejecuta la consulta con el dataReader y lee la informacion
-                    SqlDataReader reader = cmdBuscar.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        listacliente.Add(new Dictionary<String, String>(){
-                            {"DUI", reader["DUI"].ToString()},
-                            {"NombreCliente", reader["NombreCliente"].ToString()},
-                            {"TelefonoCliente", reader["TelefonoCliente"].ToString()},
-                            {"CorreoCliente", reader["CorreoCliente"].ToString()},
-                            {"Direccion", reader["Direccion"].ToString()},
-                        }) ;
-                    }
-                    reader.Close();
+                    // reader
+                    SqlDataAdapter reader = new SqlDataAdapter(queryBuscar, conexionBuscar);
+                    reader.Fill(ds);
+                    return ds;
                 }
                 catch (Exception ex)
                 {
+                    throw new Exception($"Error: {ex.Message}");
                 }
                 finally
                 {
@@ -61,7 +58,7 @@ namespace SistemaInventarioVentas.Cliente
                 }
             }
         }
-        private void totalRegistros()
+        private void TotalRegistros()
         {
             using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
             {
@@ -88,6 +85,14 @@ namespace SistemaInventarioVentas.Cliente
                     conexionBuscar.Close();
                 }
             }
+        }
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Button btnEliminar = (Button)sender;
+            GridViewRow fila = (GridViewRow)btnEliminar.NamingContainer;
+
+            id = fila.Cells[1].Text;
+            Response.Redirect("/Cliente/EliminarCliente.aspx?id=" + id);
         }
     }
 }

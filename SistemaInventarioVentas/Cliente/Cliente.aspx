@@ -8,42 +8,28 @@
                     </asp:HyperLink>
                 </div>
                     <br />
-                <div class="container">
-                    <table class="table">
-                          <thead class="table-light">
-                            <tr>
-                              <th scope="col">DUI</th>
-                              <th scope="col">Nombre Cliente</th>
-                              <th scope="col">Telefono Cliente</th>
-                              <th scope="col">Correo Cliente</th>
-                              <th scope="col">Direccion</th>
-                              <th scope="col">Acciones</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <%  foreach (Dictionary<String, String> item in listacliente)  {  %>
-                            <tr>
-                                <td><%=item["DUI"]%></td>
-                                <td><%=item["NombreCliente"]%></td>
-                                <td><%=item["TelefonoCliente"]%></td>
-                                <td><%=item["CorreoCliente"]%></td>
-                                <td><%=item["Direccion"]%></td>
-                                <td>
-                                        <!-- Botones de Modificar y Eliminar -->
-                                        <button type="button" class="btn btn-primary">Modificar</button>
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                </td>
-                            </tr>
-                            <% }  %>
-                          </tbody>
-                    </table>
-                    <nav>
-                      <ul class="pagination">
-                        <%  for (int currentPage = 1; currentPage<= totalPaginas; currentPage ++)  {  %>
+            <div class="container">
+                <asp:GridView  ID="GdvClientes" CssClass="table table-light table-hover text-center"   runat="server"> 
+                    <Columns>
+                        <asp:TemplateField HeaderText="Acciones">
+                            <ItemTemplate>
+                                <div class="d-flex ps-2 pe-2">
+                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger prueba me-2" OnClick="btnEliminar_Click"/>
+                                    <a class="btn btn-success" href="ModificarCliente.aspx">Actualizar</a>                                           
+                                </div>                                        
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+
+                <nav>
+                    <ul class="pagination">
+                        <%  for (int currentPage = 1; currentPage <= totalPaginas; currentPage++)
+                            {  %>
                         <li class="page-item"><a class="page-link" href="?page=<%= currentPage %>"><%= currentPage %></a></li>
                         <% }  %>
-                      </ul>
-                    </nav>
-                </div>
+                    </ul>
+                </nav>
+            </div>
         </div>
 </asp:Content>
