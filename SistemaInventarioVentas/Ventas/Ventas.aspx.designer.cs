@@ -15,30 +15,39 @@ namespace SistemaInventarioVentas.Ventas
     {
 
         /// <summary>
-        /// HLinkAgregar control.
+        /// GVItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLinkAgregar;
+        protected global::System.Web.UI.WebControls.GridView GVItems;
 
         /// <summary>
-        /// HLinkBuscarArticulo control.
+        /// LblItemsEmpty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLinkBuscarArticulo;
+        protected global::System.Web.UI.WebControls.Label LblItemsEmpty;
 
         /// <summary>
-        /// HlinkGenerarVenta control.
+        /// LblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HlinkGenerarVenta;
+        protected global::System.Web.UI.WebControls.Label LblTotal;
+
+        /// <summary>
+        /// BtnGenerarVenta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnGenerarVenta;
     }
 }

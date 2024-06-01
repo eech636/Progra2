@@ -15,93 +15,57 @@ namespace SistemaInventarioVentas.Ventas
     {
 
         /// <summary>
-        /// TxtNombreArticulo control.
+        /// GVItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombreArticulo;
+        protected global::System.Web.UI.WebControls.GridView GVItems;
 
         /// <summary>
-        /// ValidatorNombre control.
+        /// LblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidatorNombre;
+        protected global::System.Web.UI.WebControls.Label LblTotal;
 
         /// <summary>
-        /// TxtPrecio control.
+        /// TxtDUICliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPrecio;
+        protected global::System.Web.UI.WebControls.TextBox TxtDUICliente;
 
         /// <summary>
-        /// ValidadorPrecio control.
+        /// BtnProcess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorPrecio;
+        protected global::System.Web.UI.WebControls.Button BtnProcess;
 
         /// <summary>
-        /// TxtCantidadArticulos control.
+        /// DUIPresenceValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCantidadArticulos;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator DUIPresenceValidator;
 
         /// <summary>
-        /// ValidatorCantidad control.
+        /// DUIRegexValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidatorCantidad;
-
-        /// <summary>
-        /// LbTotalVenta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbTotalVenta;
-
-        /// <summary>
-        /// LbFecha control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbFecha;
-
-        /// <summary>
-        /// Calendar1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
-
-        /// <summary>
-        /// BtnGenerarVenta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnGenerarVenta;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator DUIRegexValidator;
     }
 }
