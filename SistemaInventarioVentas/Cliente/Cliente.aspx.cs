@@ -91,7 +91,7 @@ namespace SistemaInventarioVentas.Cliente
             Button btnEliminar = (Button)sender;
             GridViewRow fila = (GridViewRow)btnEliminar.NamingContainer;
 
-            id = fila.Cells[1].Text;
+            id = fila.Cells[0].Text;
             Response.Redirect("/Cliente/EliminarCliente.aspx?id=" + id);
         }
 
@@ -100,7 +100,7 @@ namespace SistemaInventarioVentas.Cliente
             Button btnActualizar = (Button)sender;
             GridViewRow fila = (GridViewRow)btnActualizar.NamingContainer;
 
-            id = fila.Cells[1].Text;
+            id = fila.Cells[0].Text;
             Response.Redirect("/Cliente/ModificarCliente.aspx?id=" + id);
         }
     }

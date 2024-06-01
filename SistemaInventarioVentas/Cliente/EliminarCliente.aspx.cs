@@ -17,7 +17,7 @@ namespace SistemaInventarioVentas.Cliente
         {
             AutenticacionValidador.ValidacionSesion(this);
 
-            string duiClienteStr = Request.QueryString["dui"];
+            string duiClienteStr = Request.QueryString["id"];
             if (!string.IsNullOrEmpty(duiClienteStr))
             {
                 // Cargar detalles del cliente
@@ -61,7 +61,7 @@ namespace SistemaInventarioVentas.Cliente
 
         protected void BtnEliminarCliente_Click(object sender, EventArgs e)
         {
-            string duiClienteStr = Request.QueryString["dui"];
+            string duiClienteStr = Request.QueryString["id"];
             if (!string.IsNullOrEmpty(duiClienteStr))
             {
                 using (SqlConnection conexionEliminar = Conexion.getInstance().ConexionBDProyect())
