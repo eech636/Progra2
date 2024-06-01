@@ -15,40 +15,13 @@ namespace SistemaInventarioVentas.Inventario
     {
 
         /// <summary>
-        /// Control LbingresarId.
+        /// Control GridViewProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbingresarId;
-
-        /// <summary>
-        /// Control TxtIdProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdProducto;
-
-        /// <summary>
-        /// Control ValidadorIdProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidadorIdProducto;
-
-        /// <summary>
-        /// Control LbMensajeEliminar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbMensajeEliminar;
+        protected global::System.Web.UI.WebControls.GridView GridViewProducto;
 
         /// <summary>
         /// Control BtnEliminarProducto.

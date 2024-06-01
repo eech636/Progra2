@@ -8,96 +8,125 @@ using System.Web.UI.WebControls;
 
 namespace SistemaInventarioVentas.Inventario
 {
-    public partial class MenuProductos : System.Web.UI.Page
-    {
-        //creacion del diccionario
-        public List<Dictionary<String, String>> listaProductos = new List<Dictionary<String, String>>();
-        public double totalPaginas = 0;
-        public double tPages = 10;
-
-        protected void Page_Load(object sender, EventArgs e)
+        public partial class MenuProductos : System.Web.UI.Page
         {
-            // Verificar autenticación y permisos
-            AutenticacionValidador.ValidacionSesion(this);
-            AutenticacionValidador.ValidacionPermisos(this, "SUPERVISOR");
-            SqlProductos();
-            TotalRegistrosProductos();
+            public List<Dictionary<String, String>> listaProductos = new List<Dictionary<String, String>>();
+            public double totalPaginas = 0;
+            public double tPages = 10;
 
-
-
-        }
-
-        private void SqlProductos ()
-        {
-            using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
+            protected void Page_Load(object sender, EventArgs e)
             {
-                try
+                AutenticacionValidador.ValidacionSesion(this);
+                AutenticacionValidador.ValidacionPermisos(this, "SUPERVISOR");
+
+                if (!IsPostBack)
                 {
-                    // Abrir la coonexion creada
-                    conexionBuscar.Open();
-                    double offSet = (string.IsNullOrEmpty(Request.QueryString["page"]) ? 0 : int.Parse(Request.QueryString["page"]) - 1) * tPages;
+                    SqlProductos();
+                    TotalRegistrosProductos();
+                }
+            }
 
-                    // Query para la consulta SQL para buscar el producto
-                    string queryBuscar = "SELECT * FROM Productos order by IdProducto offset " + offSet + "rows fetch next " + tPages + " rows only";
+            protected void BtnBuscar_Click(object sender, EventArgs e)
+            {
+                string searchTerm = TxtBuscar.Text.Trim();
+                SqlProductos(searchTerm);
+                TotalRegistrosProductos(searchTerm);
+            }
 
-                    // Crea el comando SQL
-                    SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
-
-                    SqlDataReader reader = cmdBuscar.ExecuteReader();
-                    while (reader.Read())
+            private void SqlProductos(string searchTerm = "")
+            {
+                listaProductos.Clear();
+                using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
+                {
+                    try
                     {
-                        listaProductos.Add(new Dictionary<String, String>(){
+                        conexionBuscar.Open();
+                        double offSet = (string.IsNullOrEmpty(Request.QueryString["page"]) ? 0 : int.Parse(Request.QueryString["page"]) - 1) * tPages;
+
+                        string queryBuscar = "SELECT * FROM Productos";
+                        if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            queryBuscar += " WHERE NombreProducto LIKE '%' + @SearchTerm + '%' OR Descripcion LIKE '%' + @SearchTerm + '%'";
+                        }
+                        queryBuscar += " ORDER BY IdProducto OFFSET " + offSet + " ROWS FETCH NEXT " + tPages + " ROWS ONLY";
+
+                        SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
+                        if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            cmdBuscar.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                        }
+
+                        SqlDataReader reader = cmdBuscar.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            listaProductos.Add(new Dictionary<String, String>(){
                             {"IdProducto", reader["IdProducto"].ToString()},
                             {"NombreProducto", reader["NombreProducto"].ToString()},
                             {"CantidadDisponible", reader["CantidadDisponible"].ToString()},
                             {"Precio", reader["Precio"].ToString()},
                             {"PrecioCosto", reader["PrecioCosto"].ToString()},
-                            {"Descripcion", reader ["Descripcion"].ToString() }
+                            {"Descripcion", reader["Descripcion"].ToString() }
                         });
+                        }
+                        reader.Close();
+
+                    if (listaProductos.Count == 0)
+                    {
+                        LblMensaje.Text = "No se encontraron productos que coincidan con la de búsqueda.";
+                        LblMensaje.Visible = true;
                     }
-                    reader.Close();
+                    else
+                    {
+                        LblMensaje.Visible = false;
+                    }
+
+
                 }
-                catch (Exception ex)
-                {
-                }
-                finally
-                {
-                    // Cierra la conexión
-                    conexionBuscar.Close();
+                    catch (Exception ex)
+                    {
+                        // Manejo de errores
+                    }
+                    finally
+                    {
+                        conexionBuscar.Close();
+                    }
                 }
             }
-        }
 
-
-        private void TotalRegistrosProductos()
-        {
-            using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
+            private void TotalRegistrosProductos(string searchTerm = "")
             {
-                try
+                using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
                 {
-                    // Abrir la conexion buscar
-                    conexionBuscar.Open();
-                    // Query para la consulta SQL para buscar el producto
-                    string queryBuscar = "SELECT COUNT(*) FROM Productos";
+                    try
+                    {
+                        conexionBuscar.Open();
+                        string queryBuscar = "SELECT COUNT(*) FROM Productos";
+                        if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            queryBuscar += " WHERE NombreProducto LIKE '%' + @SearchTerm + '%' OR Descripcion LIKE '%' + @SearchTerm + '%'";
+                        }
 
-                    // Creacion del comando SQL
-                    SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
+                        SqlCommand cmdBuscar = new SqlCommand(queryBuscar, conexionBuscar);
+                        if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            cmdBuscar.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
+                        }
 
-                    int totalProductos = (int)cmdBuscar.ExecuteScalar();
-                    double tP = totalProductos / tPages;
-                    totalPaginas = Math.Ceiling(tP);
-                }
-                catch (Exception ex)
-                {
-                }
-                finally
-                {
-                    
-                    conexionBuscar.Close();
+                        int totalProductos = (int)cmdBuscar.ExecuteScalar();
+                        double tP = totalProductos / tPages;
+                        totalPaginas = Math.Ceiling(tP);
+                    }
+                    catch (Exception ex)
+                    {
+                       
+                    }
+                    finally
+                    {
+                        conexionBuscar.Close();
+                    }
                 }
             }
         }
-    }
-
-
+    
+        
 }

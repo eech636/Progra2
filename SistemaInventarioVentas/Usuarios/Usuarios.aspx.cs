@@ -67,12 +67,16 @@ namespace SistemaInventarioVentas.Usuario
             {
                 try
                 {
-                    // Abrir la coonexion creada
+                    // Abrir la conexion creada
                     conexionBuscar.Open();
                     double offSet = (string.IsNullOrEmpty(Request.QueryString["page"]) ? 0 : int.Parse(Request.QueryString["page"]) - 1) * tPages;
 
                     // Query para la consulta SQL para buscar 
-                    string queryBuscar = "SELECT * FROM Usuarios order by IdUsuario offset " + offSet + "rows fetch next " + tPages + " rows only";
+                    string queryBuscar = "SELECT u.IdUsuario, u.NombreUsuario, u.Email, r.NombreRol " +
+                                         "FROM Usuarios u " +
+                                         "JOIN Roles r ON u.IdRol = r.IdRol " +
+                                         "ORDER BY u.IdUsuario " +
+                                         "OFFSET " + offSet + " ROWS FETCH NEXT " + tPages + " ROWS ONLY";
 
                     SqlDataAdapter reader = new SqlDataAdapter(queryBuscar, conexionBuscar);
                     reader.Fill(ds);
@@ -128,7 +132,7 @@ namespace SistemaInventarioVentas.Usuario
             Button btnEliminar = (Button)sender;
             GridViewRow fila = (GridViewRow)btnEliminar.NamingContainer;
 
-            id = fila.Cells[1].Text;
+            id = fila.Cells[0].Text;
             Response.Redirect("/Usuarios/EliminarUsuario.aspx?id=" + id);
         }
     }
