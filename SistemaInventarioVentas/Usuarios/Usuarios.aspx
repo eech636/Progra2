@@ -11,6 +11,7 @@
             <div class="container">
                 <asp:GridView AutoGenerateColumns="false" ID="GdvUsuarios" CssClass="table table-light table-hover text-center"   runat="server"> 
                     <Columns>
+                        <asp:BoundField DataField="IdUsuario" HeaderText="Id"/>
                         <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre"/>
                         <asp:BoundField DataField="Email" HeaderText="Correo"/> 
                         <asp:BoundField DataField="NombreRol" HeaderText="Rol"/>

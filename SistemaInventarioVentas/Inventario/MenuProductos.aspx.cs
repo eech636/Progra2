@@ -118,7 +118,7 @@ namespace SistemaInventarioVentas.Inventario
                     }
                     catch (Exception ex)
                     {
-                        // Manejo de errores
+                       
                     }
                     finally
                     {

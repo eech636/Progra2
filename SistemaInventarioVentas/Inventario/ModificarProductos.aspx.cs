@@ -112,11 +112,10 @@ namespace SistemaInventarioVentas.Inventario
                 }
             }
         }
-
         protected void BtnRegresarProductos_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Inventario/MenuProductos.aspx");
         }
-        
+
     }
 }

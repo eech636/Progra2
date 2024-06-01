@@ -15,24 +15,6 @@ namespace SistemaInventarioVentas.Inventario
     {
 
         /// <summary>
-        /// Control HlAgregarProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HlAgregarProducto;
-
-        /// <summary>
-        /// Control HlEliminarProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HlEliminarProducto;
-
-        /// <summary>
         /// Control TxtBuscar.
         /// </summary>
         /// <remarks>
@@ -58,5 +40,14 @@ namespace SistemaInventarioVentas.Inventario
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblMensaje;
+
+        /// <summary>
+        /// Control HlAgregarProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HlAgregarProducto;
     }
 }

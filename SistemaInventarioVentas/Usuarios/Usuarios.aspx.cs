@@ -132,7 +132,7 @@ namespace SistemaInventarioVentas.Usuario
             Button btnEliminar = (Button)sender;
             GridViewRow fila = (GridViewRow)btnEliminar.NamingContainer;
 
-            id = fila.Cells[1].Text;
+            id = fila.Cells[0].Text;
             Response.Redirect("/Usuarios/EliminarUsuario.aspx?id=" + id);
         }
     }

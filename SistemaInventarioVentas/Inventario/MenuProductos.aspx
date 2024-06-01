@@ -2,28 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <h1>Administrar Productos</h1>
-            <table class="auto-style1">
+            <table class="auto-style1 w-100 mb-4  "  >
+             
                 <tr>
-                    <td class="auto-style3">
-                        <asp:HyperLink ID="HlAgregarProducto" runat="server" Font-Size="Larger" style="text-decoration:none" color="black" NavigateUrl="~/Inventario/AgregarProductos.aspx">Agregar Nuevo Producto</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">
-                        <asp:HyperLink ID="HlEliminarProducto" runat="server" Font-Size="Larger" style="text-decoration:none" color="black" NavigateUrl="~/Inventario/EliminarProducto.aspx">Eliminar Producto</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                <td class="auto-style2">
-                    <asp:TextBox ID="TxtBuscar" runat="server" placeholder="Buscar producto..."></asp:TextBox>
-                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar Producto" OnClick="BtnBuscar_Click"  />
+                <td class="auto-style2 d-flex  ">
+                    <asp:TextBox ID="TxtBuscar" CssClass="form-control" runat="server" placeholder="Buscar producto..."></asp:TextBox>
+                    <asp:Button ID="BtnBuscar" CssClass="btn btn-primary" runat="server" Text="Buscar Producto" OnClick="BtnBuscar_Click"  />
                     <asp:Label ID="LblMensaje" runat="server" Visible="false" ForeColor="Red" style="text-align: center;"></asp:Label>
                 </td>
+                    <td class="auto-style3 align-right" style="width:210px">
+                        <asp:HyperLink ID="HlAgregarProducto" CssClass="btn btn-primary ms-auto" runat="server"  Style="text-decoration: none" color="black" NavigateUrl="~/Inventario/AgregarProductos.aspx">Agregar Nuevo Producto</asp:HyperLink>
+                    </td>
                 </tr>      
             </table>
-             
-          
-
              <div class="container">
      <table class="table">
            <thead class="table-light">
@@ -46,14 +37,12 @@
                  <td><%=item["Precio"]%></td>
                  <td><%=item["PrecioCosto"]%></td>
                  <td><%=item["Descripcion"]%></td>
-                 <td>
+                 <td style="width:200px" >
                      <a href='<%= "ModificarProductos.aspx?id=" + item["IdProducto"] %>' class="btn btn-primary">Modificar</a>
-
+                     <a href='<%= "EliminarProducto.aspx?id=" + item["IdProducto"] %>' class="btn btn-danger">Eliminar</a>
                      
                  </td>
-                 <td>
-                     <button type="button" class="btn btn-danger">Eliminar</button>
-                 </td>
+                 
                
              </tr>
              <% }  %>
@@ -61,7 +50,7 @@
      </table>
      <nav>
        <ul class="pagination">
-         <%  for (int currentPage = 1; currentPage<= totalPaginas; currentPage ++)  {  %>
+         <%  for (int currentPage = 1; currentPage<= totalPaginas; currentPage++)  {  %>
          <li class="page-item"><a class="page-link" href="?page=<%= currentPage %>"><%= currentPage %></a></li>
          <% }  %>
        </ul>

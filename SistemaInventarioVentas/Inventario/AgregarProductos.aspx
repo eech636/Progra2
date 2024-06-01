@@ -56,14 +56,12 @@
                     <td colspan="2" class="text-center">
                         <asp:Label ID="LabelMensajeAgregar" runat="server" ></asp:Label>
                     </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3" colspan="2">
-                        <asp:Button ID="BtnGuardarArticulo" runat="server" Text="Guardar" CssClass="btn btn-outline-info d-block mx-auto" OnClick="BtnGuardarArticulo_Click" />
-                    </td>
-                </tr>
-               
+                </tr>    
             </table>
+            <div class="d-flex justify-content-center my-3">
+                <asp:Button ID="BtnGuardarArticulo" runat="server" Text="Guardar" CssClass="btn btn-outline-info mx-2" OnClick="BtnGuardarArticulo_Click" />
+                <a href="MenuProductos.aspx" class="btn btn-outline-primary mx-2">Regresar al menú</a>
+            </div>
         </div>
     </div>
 </div>
