@@ -7,29 +7,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <div class="container d-flec justify-content-center">
-        <div class="col-5">
-            <div class="card card-header">
-                <h3 class="text-center">Eliminar Cliente</h3>
-            </div>
-            <div class="form card card-body">
-                <fieldset>
-                    <div class="input-group">
-                        <asp:Label ID="Label1" runat="server" Text="Nombre del Cliente:" ForeColor="Blue" CssClass="form-control"></asp:Label>
-                        <asp:TextBox ID="TxtNomCliente" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
-                    </div>
-
-                    <br />
-                    <div class="conteiner d-flex justify-content-center">
-                        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-info"/>
-                    </div>
-
-                    <br />
-                    <div class="container d-flex justify-content-center">
-                        <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
+    <div class="container">
+      <div class="col-6 mx-auto">
+          <h2 class="text-center">Eliminar Producto</h2>
+          <asp:GridView ID="GridViewCliente" AutoGenerateColumns="false" runat="server" CssClass="table table-bordered">
+              <Columns>
+                  <asp:BoundField DataField="NombreCliente" HeaderText="Nombre" HeaderStyle-CssClass="text-center" />
+                   <asp:BoundField DataField="TelefonoCliente" HeaderText="Telefono" HeaderStyle-CssClass="text-center" />
+                  <asp:BoundField DataField="CorreoCliente" HeaderText="Correo" HeaderStyle-CssClass="text-center"/>
+                   <asp:BoundField DataField="Direccion" HeaderText="Dirrecion" HeaderStyle-CssClass="text-center"/> 
+             
+              </Columns>
+          </asp:GridView>
+          <div class="text-center">
+              <asp:Button ID="BtnEliminarCliente" runat="server" Text="Eliminar" OnClick="BtnEliminarCliente_Click" CssClass="btn btn-danger" />
+              <a href="Cliente.aspx" class="btn btn-outline-primary" > Regresar al menu  </a>
+          </div>
+      </div>
+  </div>
 </asp:Content>

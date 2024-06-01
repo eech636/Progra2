@@ -31,8 +31,8 @@
                                 <td>
                                         <!-- Botones de Modificar y Eliminar -->
                                         <button type="button" class="btn btn-primary">Modificar</button>
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                </td>
+                                       <a href='<%= "EliminarCliente.aspx?dui=" + item["DUI"] %>' class="btn btn-danger">Eliminar</a>
+</td>
                             </tr>
                             <% }  %>
                           </tbody>
