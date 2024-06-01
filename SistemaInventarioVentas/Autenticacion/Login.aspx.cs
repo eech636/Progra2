@@ -41,6 +41,7 @@ namespace SistemaInventarioVentas.Autenticacion
                     if (reader.Read())
                     {
 
+                        Session["idCurrentUser"] = reader["idUsuario"].ToString();
                         Session["NombreUsuario"] = reader["NombreUsuario"].ToString();
                         Session["NombreRol"] = reader["NombreRol"].ToString();
                         Response.Redirect("../AboutUs.aspx");

@@ -18,12 +18,6 @@
                                 <asp:Label ID="Label1" runat="server" Text="Nombre del Cliente" ForeColor="Blue" CssClass="form-control"></asp:Label>
                                 <asp:TextBox ID="TxtNomCliente" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
                             </div>
-                        <br />
-                        <div class="conteiner d-flex justify-content-end">
-                            <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" CssClass="btn btn-outline-info"/>
-                        </div>
-
-                        <br />
                             <div class="input-group">
                                 <asp:Label ID="Label2" runat="server" Text="Telefono" ForeColor="Blue" CssClass="form-control"></asp:Label>
                                 <asp:TextBox ID="TxtTelefono" runat="server" ForeColor="#000000" CssClass="form-control"></asp:TextBox>
