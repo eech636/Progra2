@@ -13,5 +13,11 @@ namespace SistemaInventarioVentas
         {
 
         }
+
+        protected void BtnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/Autenticacion/Login.aspx");
+        }
     }
 }

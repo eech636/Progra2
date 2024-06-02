@@ -52,6 +52,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Usuarios/Usuarios.aspx">Usuarios</a></li>
                     </ul>
                 </div>
+                <asp:Button runat="server" Text="Cerrar Sesion" ID="BtnLogout" OnClick="BtnLogout_Click" CssClass="btn btn-outline-light"/>
             </div>
         </nav>
         <div class="container body-content">
