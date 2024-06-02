@@ -71,9 +71,10 @@ namespace SistemaInventarioVentas.Ventas
             return products.Sum(dict => Convert.ToDecimal(dict["Total"]));
         }
 
-        // TODO: Validate if customer DUI exists
         protected void BtnProcess_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid) return;
+
             SqlConnection connection = Conexion.getInstance().ConexionBDProyect();
             SqlCommand command = connection.CreateCommand();
             SqlTransaction transaction = null;
@@ -94,10 +95,10 @@ namespace SistemaInventarioVentas.Ventas
                 command.Parameters.Clear();
                 foreach (Dictionary<string, object> product in products)
                 {
-                    command.CommandText = "INSERT INTO ProductosVentas (idVenta, idProducto, Cantidad) VALUES (@idVenta, @idProducto, @Cantidad)";
+                    command.CommandText = "INSERT INTO ProductosVentas (idVenta, idProducto, Cantidad) VALUES (@idVenta, @idProducto, @Cantidad); UPDATE Productos SET CantidadDisponible = (SELECT CantidadDisponible From Productos WHERE idProducto = @idProducto) - @Cantidad WHERE idProducto = @idProducto";
                     command.Parameters.AddWithValue("@idVenta", ventaID);
                     command.Parameters.AddWithValue("@idProducto", product["idProducto"]);
-                    command.Parameters.AddWithValue("@Cantidad", product["idProducto"]);
+                    command.Parameters.AddWithValue("@Cantidad", product["Cantidad"]);
 
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
@@ -111,10 +112,39 @@ namespace SistemaInventarioVentas.Ventas
                 Debug.Write("ERROR!!!: ");
                 Debug.WriteLine(ex);
                 transaction.Rollback();
+            } finally
+            {
+                connection.Close();
             }
 
             Session["Cart"] = null;
             Response.Redirect("~/Ventas/Ventas");
+        }
+
+        protected void ValidateDUIExistence_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection connection = Conexion.getInstance().ConexionBDProyect();
+            SqlCommand command = connection.CreateCommand();
+
+            try
+            {
+                connection.Open();
+                command.Parameters.AddWithValue("@DUI", TxtDUICliente.Text);
+
+                int count = int.Parse(command.ExecuteScalar().ToString());
+
+                args.IsValid = false;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write("ERROR!!!: ");
+                Debug.WriteLine(ex);
+                args.IsValid = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }

@@ -65,6 +65,13 @@ namespace SistemaInventarioVentas.Ventas
         protected void IncreaseQuantity(int itemID)
         {
             int productIndex = products.FindIndex(dict => (int)dict["idProducto"] == itemID);
+            Debug.WriteLine($"HEREEE!!!!!!!! {products[productIndex]["CantidadDisponible"]}");
+            int cantidadDisponible = int.Parse(products[productIndex]["CantidadDisponible"].ToString());
+            int cantidadARestar = (int)products[productIndex]["Cantidad"] + 1;
+            if (cantidadARestar > cantidadDisponible)
+                return;
+
+
             if (productIndex >= 0)
                 UpdateQuantity(productIndex, (int)products[productIndex]["Cantidad"] + 1);
         }
@@ -81,7 +88,7 @@ namespace SistemaInventarioVentas.Ventas
 
         protected void UpdateQuantity(int productIndex, int newQuantity)
         {
-            if (newQuantity < 1)
+            if (newQuantity < 1 || newQuantity > int.Parse(products[productIndex]["CantidadDisponible"].ToString()))
                 return;
 
             products[productIndex]["Cantidad"] = newQuantity;

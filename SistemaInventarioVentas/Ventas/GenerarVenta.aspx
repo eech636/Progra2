@@ -24,11 +24,12 @@
                         <span class="input-group-text" id="inputGroup-sizing-sm">DUI Cliente:</span>
                         <asp:TextBox runat="server" ID="TxtDUICliente" CssClass="form-control" placeholder="00000000-0" />
                     </div>
-                    <asp:Button ID="BtnProcess" runat="server" type="button" CssClass="btn btn-success" Text="Procesar" OnClick="BtnProcess_Click" />
+                    <asp:Button ID="BtnProcess" runat="server" type="submit" CssClass="btn btn-success" Text="Procesar" OnClick="BtnProcess_Click" />
                 </div>
                 
                 <asp:RequiredFieldValidator runat="server" ID="DUIPresenceValidator" ControlToValidate="TxtDUICliente" ErrorMessage="* Numero de DUI requerido" Display="Dynamic" CssClass="text-danger" />
                 <asp:RegularExpressionValidator runat="server" ID="DUIRegexValidator" ControlToValidate="TxtDUICliente" ErrorMessage="* Ingrese un numero de DUI valido" Display="Dynamic" CssClass="text-danger" ValidationExpression="^\d{8}-\d{1}$" />
+                <asp:CustomValidator runat="server" ID="ValidateDUIExistence" ControlToValidate="TxtDUICliente" ErrorMessage="* El DUI no se encuentra registrado" Display="Dynamic" CssClass="text-danger" OnServerValidate="ValidateDUIExistence_ServerValidate"/>
             </div>
         </div>
     </div>
