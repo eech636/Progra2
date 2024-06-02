@@ -14,27 +14,6 @@
         <div class="card card-body">
             <table class="table table-bordered">
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="LbNombreProducto" runat="server" Text="Id del producto"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="TxtIdProducto" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="ValidadorBuscarProducto" runat="server" ControlToValidate="TxtIdProducto" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td  colspan="2" class="text-center" ="auto-style2">
-                        <asp:Label ID="LabelMensajeBuscar" runat="server"></asp:Label>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td colspan="2" class="auto-style2">
-                        <asp:Button ID="BtnModificarBuscar" runat="server"  Text="Buscar Producto" ValidationGroup="GrupoValidadorBuscarProducto" OnClick="BtnModificarBuscar_Click" CssClass="btn btn-outline-info d-block mx-auto" />
-                    </td>
-                   
-                </tr>
-                <tr>
                     <td cospa="2" class="auto-style2" >
                          <asp:Label ID="LnModificarNombre" runat="server" Text="Nombre del producto"></asp:Label>
                     </td>
@@ -87,16 +66,13 @@
                     <td colspan="2"  class="text-center">
                         <asp:Label ID="LbMensajeProductoModificado"  runat="server"></asp:Label>
                     </td>
-                    
                 </tr>
-                <tr>
-                    <td colspan="2" class="auto-style2">
-                        <asp:Button ID="BtnGuardarModificar" runat="server" Text="Modificar Producto" OnClick="BtnGuardarModificar_Click" CssClass="btn btn-outline-info d-block mx-auto" />
-                    </td>
-                    
-                </tr>
-              
+                
             </table>
+             <div class="text-center">
+                 <asp:Button ID="BtnGuardarModificar" runat="server" Text="Modificar Producto" OnClick="BtnGuardarModificar_Click" CssClass="btn btn-outline-info mr-5" />
+                <asp:Button ID="BtnRegresarProducto" runat="server" Text="Regresar al menú" CssClass="btn btn-outline-primary mr-5" OnClick="BtnRegresarProductos_Click" />
+             </div>
         </div>
     </div>
 </div>

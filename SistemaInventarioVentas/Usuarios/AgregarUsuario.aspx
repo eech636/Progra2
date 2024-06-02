@@ -34,8 +34,13 @@
                                 <asp:Label ID="LblError" runat="server" Text=" "></asp:Label>
                             </div>
                             <div class="pt-2">
-                                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-outline-primary" OnClick="BtnIngresar_Click" />
+                                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-outline-primary" OnClick="BtnIngresar_Click" /> 
+                               
+                                <a href="Usuarios.aspx" class="btn btn-outline-primary" > Regresar al menu  </a>
+
                             </div>
+                            
+                            
                         </fieldset>
                   </div>
 </asp:Content>                

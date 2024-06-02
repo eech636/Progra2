@@ -24,6 +24,7 @@ namespace SistemaInventarioVentas.Usuario
             }
         }
 
+       
         protected List<Dictionary<string, string>> systemRoles() {
             List < Dictionary<string, string>> roles = new List<Dictionary<string, string>>();
 
@@ -146,5 +147,11 @@ namespace SistemaInventarioVentas.Usuario
                 DropBoxRol.Items.Add(new ListItem() { Text = role["name"], Value = role["id"] });
             }
         }
+
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Usuarios/Usuarios.aspx");
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,96 +12,84 @@ namespace SistemaInventarioVentas.Cliente
 {
     public partial class EliminarCliente : System.Web.UI.Page
     {
-        public static string id = "";
-        public DataSet ds = new DataSet();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            AutenticacionValidador.ValidacionSesion(this);
+
+            string duiClienteStr = Request.QueryString["id"];
+            if (!string.IsNullOrEmpty(duiClienteStr))
             {
-                //agregar las otras lineas
-                AutenticacionValidador.ValidacionSesion(this);
-
-                //condicion de que el id que hemos puesto en la url no este null
-                if (Request.QueryString["id"] != null)
-                {
-                    //Se le asigna a nuestra variable id de tipo int
-                    id = Request.QueryString["id"].ToString();
-
-                    //mostramos los datos en un gv
-                    GdvClientes.DataSource = SqlClientes(id);
-                    GdvClientes.DataBind();
-                }
-                else
-                {
-                    //Si no se encuentra el id nos mostrara un mensaje de error
-                    lblMensaje.Text = "El ID no fue identificado";
-                    lblMensaje.CssClass = "alert alert-danger";
-                }
+                // Cargar detalles del cliente
+                CargarDetallesCliente(duiClienteStr);
             }
         }
-        private DataSet SqlClientes(string id)
+
+        private void CargarDetallesCliente(string duiCliente)
         {
-            using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
+            using (SqlConnection conexion = Conexion.getInstance().ConexionBDProyect())
             {
                 try
                 {
-                    // Abrir la coonexion creada
-                    conexionBuscar.Open();
-                    // Query para la consulta SQL para buscar el producto
-                    string queryBuscar = "SELECT * FROM Clientes WHERE DUI = '" + id + "'";
+                    conexion.Open();
+                    string query = "SELECT NombreCliente, TelefonoCliente, CorreoCliente, Direccion FROM Clientes WHERE DUI = @DUI";
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@DUI", duiCliente);
 
-                    // reader
-                    SqlDataAdapter reader = new SqlDataAdapter(queryBuscar, conexionBuscar);
-                    reader.Fill(ds);
-                    return ds;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        DataTable dt = new DataTable();
+                        dt.Load(reader);
+
+                        GridViewCliente.DataSource = dt;
+                        GridViewCliente.DataBind();
+                    }
+                    else
+                    {
+                        GridViewCliente.DataSource = null;
+                        GridViewCliente.DataBind();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception(ex.Message);
-                }
-                finally
-                {
-                    // Cierra la conexión
-                    conexionBuscar.Close();
+                    Console.WriteLine("Error al cargar los detalles del cliente: " + ex.Message);
+                    throw ex;
                 }
             }
         }
-        protected void btnEliminar_Click(object sender, EventArgs e)
+
+        protected void BtnEliminarCliente_Click(object sender, EventArgs e)
         {
-            SqlEliminarCliente(id);
-            lblMensaje.CssClass = "alert alert-success";
-            lblMensaje.Text = "Usuario Eliminado";
-        }
-        private DataSet SqlEliminarCliente(string id)
-        {
-            using (SqlConnection conexionBuscar = Conexion.getInstance().ConexionBDProyect())
+            string duiClienteStr = Request.QueryString["id"];
+            if (!string.IsNullOrEmpty(duiClienteStr))
             {
-                try
+                using (SqlConnection conexionEliminar = Conexion.getInstance().ConexionBDProyect())
                 {
-                    // Abrir la coonexion creada
-                    conexionBuscar.Open();
+                    try
+                    {
+                        conexionEliminar.Open();
+                        string queryEliminar = "DELETE FROM Clientes WHERE DUI = @DUI";
+                        SqlCommand cmd = new SqlCommand(queryEliminar, conexionEliminar);
+                        cmd.Parameters.AddWithValue("@DUI", duiClienteStr);
 
-                    // Query para la consulta SQL para buscar 
-                    string queryBuscar = "DELETE FROM Clientes WHERE DUI = '" + id + "'";
+                        cmd.ExecuteNonQuery();
 
-                    SqlDataAdapter reader = new SqlDataAdapter(queryBuscar, conexionBuscar);
-                    reader.Fill(ds);
-                    return ds;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message);
-                }
-                finally
-                {
-                    // Cierra la conexión
-                    conexionBuscar.Close();
+                        // Clear the GridView after deletion
+                        GridViewCliente.DataSource = null;
+                        GridViewCliente.DataBind();
+
+                        // Redirigir a la página de MenuClientes
+                        Response.Redirect("Cliente.aspx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error al eliminar el cliente: " + ex.Message);
+                    }
                 }
             }
         }
-        protected void btnRegresar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/Cliente/Cliente.aspx");
-        }
+
+        
     }
 }

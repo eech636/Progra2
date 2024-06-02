@@ -9,8 +9,13 @@
                 </div>
                     <br />
             <div class="container">
-                <asp:GridView  ID="GdvClientes" CssClass="table table-light table-hover text-center"   runat="server"> 
+                <asp:GridView  ID="GdvClientes" CssClass="table table-light table-hover text-center"   runat="server" AutoGenerateColumns="false"> 
                     <Columns>
+                        <asp:BoundField HeaderText="DUI" DataField="DUI" />
+                        <asp:BoundField HeaderText="Nombre" DataField="NombreCliente" />
+                        <asp:BoundField HeaderText="Telefono" DataField="TelefonoCliente" />
+                        <asp:BoundField HeaderText="Correo" DataField="CorreoCliente" />
+                        <asp:BoundField HeaderText="Direccion" DataField="Direccion" />
                         <asp:TemplateField HeaderText="Acciones">
                             <ItemTemplate>
                                 <div class="d-flex ps-2 pe-2">

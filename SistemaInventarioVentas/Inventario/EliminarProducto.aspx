@@ -6,31 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <div class="container">
-    <div class="col-6 mx-auto">
-        <h2 class="text-center">Eliminar Producto</h2>
-        <table class="table table-bordered">
-            <tr>
-                <td>
-                    <asp:Label ID="LbingresarId" runat="server" Text="Ingrese el ID del producto a eliminar"></asp:Label>
-                </td>
-                <td>
-                    <asp:TextBox ID="TxtIdProducto" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="ValidadorIdProducto" runat="server" ControlToValidate="TxtIdProducto" ErrorMessage="Este campo es obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="text-center">
-                    <asp:Label ID="LbMensajeEliminar" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="text-center">
-                     <asp:Button ID="BtnEliminarProducto" runat="server" Text="Eliminar" OnClick="BtnEliminarProducto_Click" CssClass="btn btn-outline-info d-block mx-auto" />
-                </td>
-            </tr>
-        </table>
+    
+   <div class="container">
+        <div class="col-6 mx-auto">
+            <h2 class="text-center">Eliminar Producto</h2>
+            <asp:GridView ID="GridViewProducto" AutoGenerateColumns="false" runat="server" CssClass="table table-bordered">
+                <Columns>
+                    <asp:BoundField DataField="NombreProducto" HeaderText="Nombre" />
+                     <asp:BoundField DataField="CantidadDisponible" HeaderText="Cantidad en stock" />
+                    <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
+                     <asp:BoundField DataField="PrecioCosto" HeaderText="Precio Del Producto" />
+                    <asp:BoundField DataField="Precio" HeaderText="Precio" DataFormatString="{0:C}" />
+                </Columns>
+            </asp:GridView>
+            <div class="text-center">
+                <asp:Button ID="BtnEliminarProducto" runat="server" Text="Eliminar" OnClick="BtnEliminarProducto_Click" CssClass="btn btn-danger" />
+                <a href="MenuProductos.aspx" class="btn btn-outline-primary" > Regresar al menu  </a>
+            </div>
+        </div>
     </div>
-</div>
-
 </asp:Content>
