@@ -71,10 +71,11 @@ namespace SistemaInventarioVentas.Ventas
             return products.Sum(dict => Convert.ToDecimal(dict["Total"]));
         }
 
-        // TODO: Validate if customer DUI exists
         protected void BtnProcess_Click(object sender, EventArgs e)
         {
             if (!Page.IsValid) return;
+
+            BtnProcess.Enabled = false;
 
             SqlConnection connection = Conexion.getInstance().ConexionBDProyect();
             SqlCommand command = connection.CreateCommand();
@@ -119,7 +120,7 @@ namespace SistemaInventarioVentas.Ventas
             }
 
             Session["Cart"] = null;
-            Response.Redirect("~/Ventas/Ventas");
+            LblSuccessMessage.Visible = true;
         }
 
         protected void ValidateDUIExistence_ServerValidate(object source, ServerValidateEventArgs args)

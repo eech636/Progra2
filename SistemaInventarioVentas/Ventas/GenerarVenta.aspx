@@ -26,10 +26,15 @@
                     </div>
                     <asp:Button ID="BtnProcess" runat="server" type="submit" CssClass="btn btn-success" Text="Procesar" OnClick="BtnProcess_Click" />
                 </div>
-                
+
+                <asp:Label runat="server" CssClass="p-3 text-light rounded d-block bg-success mt-3 d-flex justify-content-between align-items-center" Visible="false" ID="LblSuccessMessage">
+                    Venta procesada con exito!
+                    <asp:HyperLink runat="server" Text="Aceptar" CssClass="btn btn-outline-light" NavigateUrl="~/Ventas/Ventas" />
+                </asp:Label>
+
                 <asp:RequiredFieldValidator runat="server" ID="DUIPresenceValidator" ControlToValidate="TxtDUICliente" ErrorMessage="* Numero de DUI requerido" Display="Dynamic" CssClass="text-danger" />
                 <asp:RegularExpressionValidator runat="server" ID="DUIRegexValidator" ControlToValidate="TxtDUICliente" ErrorMessage="* Ingrese un numero de DUI valido" Display="Dynamic" CssClass="text-danger" ValidationExpression="^\d{8}-\d{1}$" />
-                <asp:CustomValidator runat="server" ID="ValidateDUIExistence" ControlToValidate="TxtDUICliente" ErrorMessage="* El DUI no se encuentra registrado" Display="Dynamic" CssClass="text-danger" OnServerValidate="ValidateDUIExistence_ServerValidate"/>
+                <asp:CustomValidator runat="server" ID="ValidateDUIExistence" ControlToValidate="TxtDUICliente" ErrorMessage="* El DUI no se encuentra registrado" Display="Dynamic" CssClass="text-danger" OnServerValidate="ValidateDUIExistence_ServerValidate" />
             </div>
         </div>
     </div>

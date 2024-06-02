@@ -51,6 +51,15 @@ namespace SistemaInventarioVentas.Ventas
         protected global::System.Web.UI.WebControls.Button BtnProcess;
 
         /// <summary>
+        /// LblSuccessMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblSuccessMessage;
+
+        /// <summary>
         /// DUIPresenceValidator control.
         /// </summary>
         /// <remarks>
