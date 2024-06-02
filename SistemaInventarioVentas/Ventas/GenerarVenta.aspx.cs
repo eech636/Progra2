@@ -135,7 +135,7 @@ namespace SistemaInventarioVentas.Ventas
 
                 int count = int.Parse(command.ExecuteScalar().ToString());
 
-                args.IsValid = false;
+                args.IsValid = count > 0;
             }
             catch (Exception ex)
             {
