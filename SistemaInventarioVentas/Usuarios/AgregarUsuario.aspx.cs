@@ -105,7 +105,8 @@ namespace SistemaInventarioVentas.Usuario
                     reader.Close();
                     return;
                 }
-                
+
+                reader.Close();
 
                 // Definimos un objeto para manejar la instrucción SQL
                 Comando = new SqlCommand("INSERT INTO Usuarios (NombreUsuario, Clave, Email, IdRol) values (@NombreUsuario, @Clave, @Email, @IdRol)", conexion);

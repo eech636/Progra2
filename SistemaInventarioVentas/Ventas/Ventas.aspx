@@ -5,6 +5,7 @@
         
         <div class="btn-toolbar py-3">
             <div class="btn-group ms-auto">
+                <asp:HyperLink runat="server" Text="Registro de Ventas" NavigateUrl="~/Ventas/HistoricoVenta.aspx" CssClass="btn btn-outline-secondary"/>
                 <asp:HyperLink runat="server" Text="Agregar" NavigateUrl="~/Ventas/AgregarArticulo.aspx" CssClass="btn btn-outline-secondary"/>
             </div>
         </div>
