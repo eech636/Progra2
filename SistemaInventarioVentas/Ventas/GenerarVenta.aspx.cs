@@ -71,6 +71,7 @@ namespace SistemaInventarioVentas.Ventas
             return products.Sum(dict => Convert.ToDecimal(dict["Total"]));
         }
 
+        // TODO: Validate if customer DUI exists
         protected void BtnProcess_Click(object sender, EventArgs e)
         {
             if (!Page.IsValid) return;
@@ -129,6 +130,7 @@ namespace SistemaInventarioVentas.Ventas
             try
             {
                 connection.Open();
+                command.CommandText = $"SELECT COUNT(DUI) FROM Clientes WHERE DUI = @DUI";
                 command.Parameters.AddWithValue("@DUI", TxtDUICliente.Text);
 
                 int count = int.Parse(command.ExecuteScalar().ToString());
