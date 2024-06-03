@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HyperLink runat="server" Text="Regresar" NavigateUrl="~/Ventas/Ventas.aspx" CssClass="btn btn-outline-secondary me-4 rounded-1" /> 
-    <h5 class="text-center">Ingresar Usuarios</h5>
+    <h5 class="text-center">HISTORICO DE VENTAS</h5>
 
     <asp:GridView runat="server" ID="GVVentas" CssClass="table table-light table-hover text-center" AutoGenerateColumns="false">
         <Columns>

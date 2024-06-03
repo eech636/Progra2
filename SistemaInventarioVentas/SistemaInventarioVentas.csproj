@@ -170,6 +170,7 @@
     <Content Include="Ventas\AgregarArticulo.aspx" />
     <Content Include="Ventas\BuscarArticulo.aspx" />
     <Content Include="Ventas\GenerarVenta.aspx" />
+    <Content Include="Ventas\HistoricoVenta.aspx" />
     <Content Include="Ventas\Ventas.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -345,6 +346,13 @@
     </Compile>
     <Compile Include="Ventas\GenerarVenta.aspx.designer.cs">
       <DependentUpon>GenerarVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\HistoricoVenta.aspx.cs">
+      <DependentUpon>HistoricoVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\HistoricoVenta.aspx.designer.cs">
+      <DependentUpon>HistoricoVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
